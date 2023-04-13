@@ -12,6 +12,18 @@
     align-items: center;
     position: relative;
 
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: 101%;
+        height: 105%;
+        border: 2px solid $primary;
+      }
+    }
+
     .icon:first-child {
       color: $primary;
       position: absolute;
@@ -30,7 +42,7 @@
       -webkit-appearance: none;
       border: 0;
       background-color: transparent;
-      padding: 5px 30px 5px 35px;
+      padding: 10px 30px 10px 35px;
       position: relative;
       z-index: 1;
       font-size: 14px;
@@ -39,9 +51,12 @@
       &:focus {
         outline: none;
       }
+
+      option {
+        background-color: transparent;
+      }
     }
   }
-
   .searchField {
     display: flex;
     align-items: center;
