@@ -24,6 +24,7 @@
 
             &:hover {
               color: $footer-links-color-hover;
+              @extend %hover-animation;
             }
           }
         }
@@ -73,6 +74,7 @@
 
             &:hover {
               color: $bottom-bar-icons-color-hover;
+              @extend %hover-animation;
             }
           }
         }

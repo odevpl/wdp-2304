@@ -116,3 +116,14 @@ $button-icon-hover-color: $white;
 //MenuDropdown.module.scss
 $MenuDropdown-icon-border: $orange;
 $MenuDropdown-icon-background: $orange;
+
+/* hover effects */
+$hover-duration: 250ms;
+$hover-effect: all;
+$hover-timing-function: ease-in-out;
+
+%hover-animation {
+  transition-property: #{$hover-effect};
+  transition-duration: $hover-duration;
+  transition-timing-function: $hover-timing-function;
+}

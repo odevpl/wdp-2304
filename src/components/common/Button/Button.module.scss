@@ -15,6 +15,7 @@
     color: $button-text-hover !important;
     background-color: $button-main-bg-hover;
     text-decoration: none;
+    @extend %hover-animation;
   }
 }
 
@@ -37,5 +38,6 @@
   &:not(.noHover):hover {
     background-color: $button-icon-hover-bg;
     color: $button-icon-hover-color;
+    @extend %hover-animation;
   }
 }
