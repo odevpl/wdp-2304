@@ -1,13 +1,111 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+//COLORS //NIE UŻYWAĆ Z ŻADNYM INNYM PLIKU
 
-$primary: #d58e32;
+$darkGray: #2a2a2a;
+$lightGray: #363636;
+$orange: #d58e32;
+$normalGray: #434343;
+$lightBlack: #292929;
+$white: #ffffff;
+$darkenedWhite: #e2e2e2;
+$Gainsboro: #e1e1e1;
+$lightWhite: #f4f5f7;
+$shadeGray: #b6b6b6;
+$whiteGray: rgb(169, 169, 169);
+$mistyWhite: rgb(216, 216, 216);
+$tintedWhite: rgb(224, 227, 237);
+$nero: rgb(42, 42, 42);
 
-$text-color: #2a2a2a;
+//COLORS USED IN PROJECT
 
-$form-border-color: #292929;
+//TopBar.module.scss
+$header-topbar-bg: $normalGray;
+$header-topbar-text: $white;
+$header-topbar-text-hover: $orange;
+
+//MenuBar.module.scss
+$menu-bg: $white;
+$menu-border-top: $white;
+$menu-bg-text-color: $darkGray;
+$menu-bg-color-active: $orange;
+$menu-bg-text-color-hover: $white;
+$menu-border-color-hover: $orange;
+$menu-border-color-active: $darkGray;
+
+//Footer.module.scss
+$footer-bg: $lightGray;
+$footer-headlines-color: $white;
+$footer-links-color: $whiteGray;
+$footer-links-color-hover: $white;
+$bottom-bar-bg: $darkGray;
+$bottom-bar-text-color: $whiteGray;
+$bottom-bar-icons-color: $whiteGray;
+$bottom-bar-icons-color-hover: $orange;
+
+//CompanyClaim.module.scss
+$company-claim-bg: $lightGray;
+$phone-number-color: $mistyWhite;
+$phone-number-icon-color: $orange;
+$cart-icon-color: $white;
+$cart-box-color: $orange;
+$bg-price-color: $lightGray;
+$cart-counter-color: $tintedWhite;
+$cart-box-color-hover: $orange;
+
+//ProductSearch.module.scss
+$search-border: $lightBlack;
+$category-border-right: $lightBlack;
+$category-icon-color: $orange;
+$search-placeholder-color: $darkGray;
+$category-second-icon: $darkGray;
+
+//NewFurniture.module.scss
+$panel-bar-border-bottom: $darkenedWhite;
+$new-furniture-heading-color: $orange;
+$new-furniture-heading-color-before: $orange;
+$new-furniture-links-color: $nero;
+$new-furniture-links-color-hover: $orange;
+$new-furniture-dots-bg-color: $white;
+$new-furniture-dots-hover-active-color: $orange;
+
+//ProductBox.module.scss
+$product-box-bg: $white;
+$product-box-border: $Gainsboro;
+$product-box-photo-bg: $lightWhite;
+$product-box-sale-bg: $lightBlack;
+$product-box-sale-text: $white;
+$product-box-old-price: $lightBlack;
+$product-box-old-price-text: $white;
+$product-box-old-price-text-after: $white;
+$product-box-text: $orange;
+$product-box-stars: $nero;
+$product-box-line: $darkGray;
+$product-box-border-bottom: $orange;
+
+//FeatureBox.module.scss
+$feature-box-border: $shadeGray;
+$feature-box-icon: $darkGray;
+$feature-box-circle-border: $shadeGray;
+$feature-box-whole-circle-bg: $white;
+$feature-box-middle-circle-bg: $shadeGray;
+$feature-box-text: $nero;
+$feature-box-active-icon: $white;
+$feature-box-active: $orange;
+$feature-box-active-middle-circle: $orange;
+$feature-box-content-active: $orange;
+
+//Button.module.scss
+$button-main-bg: $darkGray;
+$button-text: $white;
+$button-text-hover: $white;
+$button-main-bg-hover: $orange;
+$button-icon-border: $darkGray;
+$button-icon-color: $darkGray;
+$button-icon-hover-bg: $darkGray;
+$button-icon-hover-color: $white;
+
+
+
+
