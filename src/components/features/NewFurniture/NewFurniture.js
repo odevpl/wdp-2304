@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Swipeable from '../Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
   state = {
@@ -39,6 +39,22 @@ class NewFurniture extends React.Component {
       );
     }
 
+    const leftAction = () => {
+      this.setState({ activePage: activePage + 1 });
+
+      if (activePage >= pagesCount - 1) {
+        this.setState({ activePage: activePage + 0 });
+      }
+    };
+
+    const RightAction = () => {
+      this.setState({ activePage: activePage - 1 });
+
+      if (activePage <= 0) {
+        this.setState({ activePage: activePage + 0 });
+      }
+    };
+
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -66,13 +82,17 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
-          </div>
+          <Swipeable leftAction={leftAction} rightAction={RightAction}>
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * 8, (activePage + 1) * 8)
+                .map(item => (
+                  <div key={item.id} className='col-3'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+            </div>
+          </Swipeable>
         </div>
       </div>
     );
