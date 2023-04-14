@@ -70,3 +70,70 @@
     }
   }
 }
+
+@media (max-width: 520px) {
+  .root {
+    .row {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-content: space-around;
+    }
+
+    .logo {
+      text-align: right !important;
+      flex: 1 1 100%;
+      padding: 30px 50px;
+    }
+
+    .cart {
+      align-self: flex-end;
+      flex: 1 1 auto;
+      text-align: left !important;
+      padding: 20px 0 10px 80px;
+    }
+
+    .phoneNumber {
+      order: 1;
+      align-self: flex-end;
+      flex: 1 1 auto;
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .root {
+    .logo {
+      padding-right: 20px;
+
+      img {
+        width: 140px;
+      }
+    }
+
+    .cart {
+      padding-left: 70px;
+    }
+
+    .phoneNumber p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .root {
+    .logo {
+      padding-right: 20px;
+
+      img {
+        width: 140px;
+      }
+    }
+
+    .phoneNumber p {
+      font-size: 12px;
+    }
+  }
+}
