@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 import {
   faTruck,
@@ -16,7 +17,7 @@ const FeatureBoxes = () => (
     <div className='container'>
       <div className='row'>
         <div className='col'>
-          <FeatureBox icon={faTruck} active>
+          <FeatureBox icon={faTruck}>
             <h5>Free shipping</h5>
             <p>All orders</p>
           </FeatureBox>
