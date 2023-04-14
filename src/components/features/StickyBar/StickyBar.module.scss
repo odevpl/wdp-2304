@@ -1,0 +1,65 @@
+@import "../../../styles/settings.scss";
+
+.stickyBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $sticky-bar-background;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+
+  .stickyBarImageContainer {
+    position: relative;
+    margin-right: 6px;
+    margin-left: 6px;
+    img {
+      width: 264px;
+      height: 264px;
+
+      object-fit: cover;
+      align-items: center;
+    }
+    .stickyBarImageOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+    }
+
+    &:hover {
+      .stickyBarImageOverlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .stickyBarImageIcon {
+    color: $sticky-bar-image-icon;
+    font-size: 128px;
+  }
+
+  .compare_button {
+
+    background-color: $sticky-bar-compare-button;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      color: $sticky-bar-background !important;
+      background-color: $sticky-bar-compare-button;
+      text-decoration: none;
+    }
+  }
+
+}
