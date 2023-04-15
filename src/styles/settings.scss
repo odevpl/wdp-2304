@@ -60,6 +60,7 @@ $category-border-right: $lightBlack;
 $category-icon-color: $orange;
 $search-placeholder-color: $darkGray;
 $category-second-icon: $darkGray;
+$category-hover-after: $orange;
 
 //NewFurniture.module.scss
 $panel-bar-border-bottom: $darkenedWhite;
@@ -83,6 +84,8 @@ $product-box-text: $orange;
 $product-box-stars: $nero;
 $product-box-line: $darkGray;
 $product-box-border-bottom: $orange;
+$product-box-icon-bg-active: $orange;
+$product-box-icon-color-active: $white;
 
 //FeatureBox.module.scss
 $feature-box-border: $shadeGray;
@@ -95,6 +98,10 @@ $feature-box-active-icon: $white;
 $feature-box-active: $orange;
 $feature-box-active-middle-circle: $orange;
 $feature-box-content-active: $orange;
+$feature-box-link-icon-hover: $white;
+$feature-box-link-icon-bg-hover-after: $orange;
+$feature-box-link-icon-border-hover-after: $orange;
+$feature-box-content-hover: $orange;
 
 //Button.module.scss
 $button-main-bg: $darkGray;
