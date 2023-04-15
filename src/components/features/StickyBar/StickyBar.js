@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeSelected } from '../../../redux/productsRedux';
 import styles from './StickyBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
