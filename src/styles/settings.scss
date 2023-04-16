@@ -60,6 +60,7 @@ $category-icon-color: $orange;
 $search-placeholder-color: $darkGray;
 $category-second-icon: $darkGray;
 $category-hover-after: $orange;
+$form-border-color: $orange;
 
 //NewFurniture.module.scss
 $panel-bar-border-bottom: $darkenedWhite;
@@ -111,3 +112,7 @@ $button-icon-border: $darkGray;
 $button-icon-color: $darkGray;
 $button-icon-hover-bg: $darkGray;
 $button-icon-hover-color: $white;
+
+//MenuDropdown.module.scss
+$MenuDropdown-icon-border: $orange;
+$MenuDropdown-icon-background: $orange;
