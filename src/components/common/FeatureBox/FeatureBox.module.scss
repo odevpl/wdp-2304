@@ -80,18 +80,18 @@
 a {
   display: block;
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: none;
     .iconWrapper {
-      color: #ffffff;
+      color: $feature-box-link-icon-hover;
       &::after {
-        background-color: $primary;
-        border-color: $primary;
+        background-color: $feature-box-link-icon-bg-hover-after;
+        border-color: $feature-box-link-icon-border-hover-after;
       }
     }
     .content {
-      color: $primary;
+      color: $feature-box-content-hover;
     }
   }
 }
