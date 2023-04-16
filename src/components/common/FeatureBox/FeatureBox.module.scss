@@ -84,14 +84,14 @@ a {
   &:hover {
     text-decoration: none;
     .iconWrapper {
-      color: #ffffff;
+      color: $feature-box-link-icon-hover;
       &::after {
-        background-color: $feature-box-active-middle-circle;
-        border-color: $feature-box-active-middle-circle;
+        background-color: $feature-box-link-icon-bg-hover-after;
+        border-color: $feature-box-link-icon-border-hover-after;
       }
     }
     .content {
-      color: $feature-box-active-middle-circle;
+      color: $feature-box-content-hover;
     }
   }
 }

@@ -5,6 +5,10 @@
   border: 1px solid $product-box-border;
   margin-bottom: 2rem;
 
+  &:hover .photo .buttons {
+    display: flex;
+  }
+
   .photo {
     position: relative;
     padding: 10px 10px 0 10px;
@@ -60,7 +64,7 @@
     }
 
     .buttons {
-      display: flex;
+      display: none;
       justify-content: space-between;
     }
   }
@@ -109,8 +113,8 @@
 
   .outlines {
     .active {
-      background-color: $product-box-text;
-      color: #ffffff;
+      background-color: $product-box-icon-bg-active;
+      color: $product-box-icon-color-active;
     }
   }
 }
