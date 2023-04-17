@@ -58,6 +58,7 @@
                 left: 0;
                 width: 100%;
                 border-bottom: 4px solid $new-furniture-links-color-hover;
+                @extend %hover-animation;
               }
             }
           }
@@ -92,6 +93,7 @@
             &.active,
             &:hover {
               background-color: $new-furniture-dots-hover-active-color;
+              @extend %hover-animation;
             }
           }
         }

@@ -19,6 +19,7 @@
         &:hover {
           color: $header-topbar-text-hover;
           text-decoration: none;
+          @extend %hover-animation;
         }
       }
     }
