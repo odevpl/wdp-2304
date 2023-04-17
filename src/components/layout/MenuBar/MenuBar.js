@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
+import MenuDropdown from '../../common/MenuDropdown/MenuDropdown';
 
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row align-items-center'>
-        <div className='col'>
+        <div className={`col ${styles.search}`}>
           <ProductSearch />
         </div>
         <div className={'col-auto ' + styles.menu}>
@@ -38,6 +39,9 @@ const MenuBar = ({ children }) => (
               <a href='#'>Blog</a>
             </li>
           </ul>
+        </div>
+        <div className={`${styles.dropdown}`}>
+          <MenuDropdown />
         </div>
       </div>
     </div>

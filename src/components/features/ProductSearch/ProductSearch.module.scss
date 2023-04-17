@@ -37,7 +37,7 @@
       right: 10px;
       z-index: 0;
     }
-    
+
     .categoryDropdown {
       position: relative;
       display: inline-block;
@@ -64,7 +64,7 @@
         padding: 0;
         background-color: #f1f1f1;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
 
         li {
@@ -106,6 +106,26 @@
       border: 0;
       background-color: transparent;
       outline: none;
+    }
+  }
+}
+
+@media (max-width: 565px) {
+  .root {
+    flex-direction: column;
+    margin-bottom: 1rem;
+    height: 80px;
+
+    .category {
+      border-right: none;
+      border-bottom: 1px solid $form-border-color;
+      margin-bottom: 2px;
+    }
+
+    .searchField {
+      input {
+        padding-top: 5px;
+      }
     }
   }
 }

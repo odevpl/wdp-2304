@@ -8,6 +8,9 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import ProductRating from '../../features/ProductRating/ProductRating';
 
+import { useDispatch } from 'react-redux';
+import { toggleFavorite } from '../../../redux/productsRedux';
+
 const ProductBox = ({
   id,
   name,
@@ -20,38 +23,51 @@ const ProductBox = ({
   image,
   category,
   oldPrice,
-}) => (
-  <div className={styles.root}>
-    <div className={styles.photo}>
-      <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
-      {promo && <div className={styles.sale}>{promo}</div>}
-      {oldPrice && <div className={styles.oldPrice}>$ {oldPrice}</div>}
-      <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
-        <Button variant='small'>
-          <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-        </Button>
+}) => {
+  const dispatch = useDispatch();
+
+  const handleFavorite = e => {
+    e.preventDefault();
+    dispatch(toggleFavorite(id));
+  };
+
+  return (
+    <div className={styles.root}>
+      <div className={styles.photo}>
+        <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
+        {promo && <div className={styles.sale}>{promo}</div>}
+        {oldPrice && <div className={styles.oldPrice}>$ {oldPrice}</div>}
+        <div className={styles.buttons}>
+          <Button variant='small'>Quick View</Button>
+          <Button variant='small'>
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+          </Button>
+        </div>
+      </div>
+      <ProductRating id={id} stars={stars} userStars={userStars} name={name} />
+      <div className={styles.line}></div>
+      <div className={styles.actions}>
+        <div className={styles.outlines}>
+          <Button
+            variant='outline'
+            className={favorite && styles.active}
+            onClick={handleFavorite}
+          >
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          </Button>
+          <Button variant='outline' className={compare && styles.active}>
+            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+          </Button>
+        </div>
+        <div className={styles.price}>
+          <Button noHover variant='small'>
+            $ {price}
+          </Button>
+        </div>
       </div>
     </div>
-    <ProductRating id={id} stars={stars} userStars={userStars} name={name} />
-    <div className={styles.line}></div>
-    <div className={styles.actions}>
-      <div className={styles.outlines}>
-        <Button variant='outline' className={favorite && styles.active}>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-        </Button>
-        <Button variant='outline' className={compare && styles.active}>
-          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-        </Button>
-      </div>
-      <div className={styles.price}>
-        <Button noHover variant='small'>
-          $ {price}
-        </Button>
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 ProductBox.propTypes = {
   id: PropTypes.string,
@@ -66,6 +82,7 @@ ProductBox.propTypes = {
   image: PropTypes.string,
   category: PropTypes.string,
   oldPrice: PropTypes.number,
+  isFavorite: PropTypes.bool,
 };
 
 export default ProductBox;

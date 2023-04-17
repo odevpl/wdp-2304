@@ -1,6 +1,5 @@
 $base-padding: 24px;
 
-
 //COLORS //NIE UŻYWAĆ Z ŻADNYM INNYM PLIKU
 
 $darkGray: #2a2a2a;
@@ -61,6 +60,7 @@ $category-icon-color: $orange;
 $search-placeholder-color: $darkGray;
 $category-second-icon: $darkGray;
 $category-hover-after: $orange;
+$form-border-color: $lightBlack;
 
 //NewFurniture.module.scss
 $panel-bar-border-bottom: $darkenedWhite;
@@ -114,6 +114,17 @@ $button-icon-color: $darkGray;
 $button-icon-hover-bg: $darkGray;
 $button-icon-hover-color: $white;
 
+//MenuDropdown.module.scss
+$MenuDropdown-icon-border: $orange;
+$MenuDropdown-icon-background: $orange;
 
+/* hover effects */
+$hover-duration: 250ms;
+$hover-effect: all;
+$hover-timing-function: ease-in-out;
 
-
+%hover-animation {
+  transition-property: #{$hover-effect};
+  transition-duration: $hover-duration;
+  transition-timing-function: $hover-timing-function;
+}
