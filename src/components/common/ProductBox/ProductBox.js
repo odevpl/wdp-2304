@@ -10,11 +10,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../../redux/productsRedux';
 
 const ProductBox = ({
+  id,
   name,
   price,
   promo,
@@ -24,7 +26,6 @@ const ProductBox = ({
   image,
   category,
   oldPrice,
-  id,
 }) => {
   const dispatch = useDispatch();
 
@@ -36,7 +37,9 @@ const ProductBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
+        <Link to={`/product/${`${category}-${id}`}`}>
+          <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
+        </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         {oldPrice && <div className={styles.oldPrice}>$ {oldPrice}</div>}
         <div className={styles.buttons}>
@@ -47,7 +50,9 @@ const ProductBox = ({
         </div>
       </div>
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <Link to={`/product/${`${category}-${id}`}`}>
+          <h5>{name}</h5>
+        </Link>
         <div className={styles.stars}>
           {[1, 2, 3, 4, 5].map(i => (
             <a key={i} href='#'>
@@ -86,6 +91,7 @@ const ProductBox = ({
 
 ProductBox.propTypes = {
   children: PropTypes.node,
+  id: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
