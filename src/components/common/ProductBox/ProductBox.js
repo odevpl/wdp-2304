@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import ProductRating from '../../features/ProductRating/ProductRating';
+
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addSelected } from '../../../redux/productsRedux';
@@ -25,6 +23,7 @@ const ProductBox = ({
   price,
   promo,
   stars,
+  userStars,
   favorite,
   compare,
   image,
@@ -67,22 +66,7 @@ const ProductBox = ({
           </Button>
         </div>
       </div>
-      <div className={styles.content}>
-        <Link to={`/product/${`${category}-${id}`}`}>
-          <h5>{name}</h5>
-        </Link>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
-      </div>
+      <ProductRating id={id} stars={stars} userStars={userStars} name={name} />
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
@@ -108,18 +92,19 @@ const ProductBox = ({
 };
 
 ProductBox.propTypes = {
+  id: PropTypes.string,
   children: PropTypes.node,
   id: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  userStars: PropTypes.number,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
   image: PropTypes.string,
   category: PropTypes.string,
   oldPrice: PropTypes.number,
-  id: PropTypes.string,
   isFavorite: PropTypes.bool,
   isSelected: PropTypes.bool,
 };
