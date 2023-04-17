@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../Swipeable/Swipeable';
@@ -19,11 +19,23 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, screenMode } = this.props;
     const { activeCategory, activePage } = this.state;
 
+    const productsPerPage = () => {
+      if (screenMode === 'tablet') {
+        return 3;
+      } else if (screenMode === 'mobile') {
+        return 2;
+      } else if (screenMode === 'small-mobile') {
+        return 1;
+      } else {
+        return 8;
+      }
+    };
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / productsPerPage());
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -85,7 +97,10 @@ class NewFurniture extends React.Component {
           <Swipeable leftAction={leftAction} rightAction={RightAction}>
             <div className='row'>
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(
+                  activePage * productsPerPage(),
+                  (activePage + 1) * productsPerPage()
+                )
                 .map(item => (
                   <div key={item.id} className={'col-12 col-sm-6 col-md-4 col-lg-3'}>
                     <ProductBox {...item} />
@@ -101,6 +116,7 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
+  screenMode: PropTypes.string,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
