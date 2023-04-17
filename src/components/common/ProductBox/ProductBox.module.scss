@@ -117,4 +117,9 @@
       color: $product-box-icon-color-active;
     }
   }
+
+  .content .stars {
+    display: flex;
+    justify-content: center;
+  }
 }
