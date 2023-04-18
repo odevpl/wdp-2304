@@ -287,6 +287,14 @@ const initialState = {
   cart: {
     products: [],
   },
+
+  brands: {
+    firstBrand: '/images/brands/logo1.avif',
+    secondBrand: '/images/brands/logo2.avif',
+    thirdBrand: '/images/brands/logo3.avif',
+    fourthBrand: '/images/brands/logo4.avif',
+    fifthBrand: '/images/brands/logo5.avif',
+  },
 };
 
 export default initialState;
