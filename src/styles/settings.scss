@@ -123,8 +123,17 @@ $hover-duration: 250ms;
 $hover-effect: all;
 $hover-timing-function: ease-in-out;
 
+//sectionBrands.moudle.scss
+$card-bg-color: $shadeGray;
+
 %hover-animation {
   transition-property: #{$hover-effect};
   transition-duration: $hover-duration;
   transition-timing-function: $hover-timing-function;
 }
+
+//StickyBar.module.scss
+$sticky-bar-image-icon: $darkGray;
+$sticky-bar-background: $white;
+$sticky-bar-compare-button:$orange;
+$sticky-bar-compare-button-hover:$white;

@@ -19,7 +19,7 @@
       repeat: no-repeat;
     }
     img {
-      height: 100%;
+      height: 200px;
       width: 100%;
       object-fit: cover;
     }
@@ -81,6 +81,8 @@
     }
 
     .stars {
+      display: flex;
+      justify-content: center;
       a {
         text-decoration: none;
         color: $product-box-stars;
@@ -116,5 +118,10 @@
       background-color: $product-box-icon-bg-active;
       color: $product-box-icon-color-active;
     }
+  }
+
+  .content .stars {
+    display: flex;
+    justify-content: center;
   }
 }
