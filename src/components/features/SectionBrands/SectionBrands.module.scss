@@ -1,0 +1,30 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 2rem;
+}
+
+.cardContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .brandImage {
+  height: 130px;
+  width: 200px;
+  padding: 1px;
+  background: $card-bg-color;
+  margin: 0 10px;
+}
+
+.card .brandImage img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.arrow {
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+}

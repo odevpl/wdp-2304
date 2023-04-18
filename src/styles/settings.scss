@@ -122,6 +122,9 @@ $hover-duration: 250ms;
 $hover-effect: all;
 $hover-timing-function: ease-in-out;
 
+//sectionBrands.moudle.scss
+$card-bg-color: $shadeGray;
+
 %hover-animation {
   transition-property: #{$hover-effect};
   transition-duration: $hover-duration;
