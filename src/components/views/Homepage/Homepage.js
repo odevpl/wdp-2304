@@ -11,10 +11,6 @@ import ChatBot from '../../features/ChatBot/ChatBot';
 import FurnitureGallery from '../../features/Furniture Gallery/FurnitureGalleryContainer';
 import ClientFeedback from '../../features/ClientFeedback/ClientFeedback';
 import LatestBlog from '../../features/LatestBlog/LatestBlog';
-<<<<<<< HEAD
-=======
-import PromoBoxes from '../../features/PromoBoxes/PromoBoxes';
->>>>>>> 7e7e5d7 (Add promoted section, and extract productboxDescription)
 import Promoted from '../../features/Promoted/Promoted';
 
 const Homepage = () => (
