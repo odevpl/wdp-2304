@@ -10,11 +10,17 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
-
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 import { useDispatch } from 'react-redux';
+import { addSelected } from '../../../redux/productsRedux';
+import { useSelector } from 'react-redux';
+import { removeSelected } from '../../../redux/productsRedux';
+import { getSelected } from '../../../redux/productsRedux';
+
 import { toggleFavorite } from '../../../redux/productsRedux';
 
 const ProductBox = ({
+  id,
   name,
   price,
   promo,
@@ -24,7 +30,7 @@ const ProductBox = ({
   image,
   category,
   oldPrice,
-  id,
+  isSelected,
 }) => {
   const dispatch = useDispatch();
 
@@ -33,10 +39,25 @@ const ProductBox = ({
     dispatch(toggleFavorite(id));
   };
 
+
+  const selectedProducts = useSelector(state => getSelected(state));
+
+  const handleSelectedProduct = e => {
+    e.preventDefault();
+    if (selectedProducts.length < 4 || isSelected) {
+      if (isSelected) {
+        dispatch(removeSelected(id));
+      } else {
+        dispatch(addSelected(id));
+      }
+    }
+  };
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
+        <Link to={`/product/${`${category}-${id}`}`}>
+          <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
+        </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         {oldPrice && <div className={styles.oldPrice}>$ {oldPrice}</div>}
         <div className={styles.buttons}>
@@ -47,7 +68,9 @@ const ProductBox = ({
         </div>
       </div>
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <Link to={`/product/${`${category}-${id}`}`}>
+          <h5>{name}</h5>
+        </Link>
         <div className={styles.stars}>
           {[1, 2, 3, 4, 5].map(i => (
             <a key={i} href='#'>
@@ -70,7 +93,7 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' className={compare && styles.active}>
+          <Button variant='outline' className={compare && styles.active} onClick={handleSelectedProduct}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -86,6 +109,7 @@ const ProductBox = ({
 
 ProductBox.propTypes = {
   children: PropTypes.node,
+  id: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
@@ -97,6 +121,7 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   id: PropTypes.string,
   isFavorite: PropTypes.bool,
+  isSelected: PropTypes.bool,
 };
 
 export default ProductBox;
