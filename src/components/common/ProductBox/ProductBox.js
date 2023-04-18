@@ -11,8 +11,12 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
-
 import { useDispatch } from 'react-redux';
+import { addSelected } from '../../../redux/productsRedux';
+import { useSelector } from 'react-redux';
+import { removeSelected } from '../../../redux/productsRedux';
+import { getSelected } from '../../../redux/productsRedux';
+
 import { toggleFavorite } from '../../../redux/productsRedux';
 
 const ProductBox = ({
@@ -26,6 +30,7 @@ const ProductBox = ({
   image,
   category,
   oldPrice,
+  isSelected,
 }) => {
   const dispatch = useDispatch();
 
@@ -34,6 +39,19 @@ const ProductBox = ({
     dispatch(toggleFavorite(id));
   };
 
+
+  const selectedProducts = useSelector(state => getSelected(state));
+
+  const handleSelectedProduct = e => {
+    e.preventDefault();
+    if (selectedProducts.length < 4 || isSelected) {
+      if (isSelected) {
+        dispatch(removeSelected(id));
+      } else {
+        dispatch(addSelected(id));
+      }
+    }
+  };
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -75,7 +93,7 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' className={compare && styles.active}>
+          <Button variant='outline' className={compare && styles.active} onClick={handleSelectedProduct}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -103,6 +121,7 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   id: PropTypes.string,
   isFavorite: PropTypes.bool,
+  isSelected: PropTypes.bool,
 };
 
 export default ProductBox;
