@@ -11,11 +11,11 @@ import ChatBot from '../../features/ChatBot/ChatBot';
 import FurnitureGallery from '../../features/Furniture Gallery/FurnitureGalleryContainer';
 import ClientFeedback from '../../features/ClientFeedback/ClientFeedback';
 import LatestBlog from '../../features/LatestBlog/LatestBlog';
-import PromoBoxes from '../../features/PromoBoxes/PromoBoxes';
+import Promoted from '../../features/Promoted/Promoted';
 
 const Homepage = () => (
   <div className={styles.root}>
-    <PromoBoxes />
+    <Promoted />
     <FeatureBoxes />
     <SectionPromotions />
     <NewFurniture />

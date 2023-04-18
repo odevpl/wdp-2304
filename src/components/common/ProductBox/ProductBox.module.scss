@@ -58,6 +58,24 @@
       justify-content: space-between;
     }
   }
+  .content {
+    text-align: center;
+    padding: 20px;
+
+    h5 {
+      color: $product-box-text;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      a {
+        text-decoration: none;
+        color: $product-box-text;
+      }
+    }
+  }
 
   .line {
     margin: 0 10px;

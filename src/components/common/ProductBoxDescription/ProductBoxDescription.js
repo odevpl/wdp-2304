@@ -1,32 +1,40 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faExchangeAlt, faStar } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHeart,
+  faExchangeAlt,
+  faStar,
+  faEye,
+} from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
-
+import ProductRating from '../../features/ProductRating/ProductRating';
 import styles from './ProductBoxDescription.module.scss';
 
-const ProductBoxDescription = ({ favorite, compare, price, name, stars }) => {
+const ProductBoxDescription = ({
+  favorite,
+  compare,
+  price,
+  name,
+  stars,
+  showEyeButton,
+  id,
+  userStars,
+}) => {
   return (
     <div className={styles.root}>
       <div className={styles.content}>
-        <h5>{name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
+        <ProductRating id={id} stars={stars} userStars={userStars} name={name} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
+          {showEyeButton && (
+            <Button variant='outline'>
+              <FontAwesomeIcon icon={faEye}>View</FontAwesomeIcon>
+            </Button>
+          )}
           <Button variant='outline' className={favorite && styles.active}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
@@ -49,5 +57,8 @@ ProductBoxDescription.propTypes = {
   favorite: PropTypes.bool.isRequired,
   compare: PropTypes.bool.isRequired,
   price: PropTypes.number.isRequired,
+  showEyeButton: PropTypes.bool,
+  id: PropTypes.number,
+  userStars: PropTypes.number,
 };
 export default ProductBoxDescription;
