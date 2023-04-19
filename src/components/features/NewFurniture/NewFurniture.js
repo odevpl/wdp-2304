@@ -111,23 +111,21 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-          <Swipeable leftAction={leftAction} rightAction={RightAction}>
-            <div className='row'>
-              {categoryProducts
-                .slice(
-                  activePage * productsPerPage(),
-                  (activePage + 1) * productsPerPage()
-                )
-                .map(item => (
-                  <div key={item.id} className={'col-12 col-sm-6 col-md-4 col-lg-3'}>
-                    <div className={`${fade ? styles.fadeOut : styles.fadeIn}`}>
+            <Swipeable leftAction={leftAction} rightAction={RightAction}>
+              <div className='row'>
+                {categoryProducts
+                  .slice(
+                    activePage * productsPerPage(),
+                    (activePage + 1) * productsPerPage()
+                  )
+                  .map(item => (
+                    <div key={item.id} className={'col-12 col-sm-6 col-md-4 col-lg-3'}>
                       <ProductBox {...item} />
                     </div>
-                  </div>
-                ))}
-            </div>
-          </Swipeable>
+                  ))}
+              </div>
+            </Swipeable>
+          </div>
         </div>
         <StickyBar products={selectedProducts} />
       </>
