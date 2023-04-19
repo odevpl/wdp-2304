@@ -38,7 +38,6 @@ const ProductBox = ({
     dispatch(toggleFavorite(id));
   };
 
-
   const selectedProducts = useSelector(state => getSelected(state));
 
   const handleSelectedProduct = e => {
@@ -77,7 +76,11 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' className={compare && styles.active} onClick={handleSelectedProduct}>
+          <Button
+            variant='outline'
+            className={compare && styles.active}
+            onClick={handleSelectedProduct}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -92,7 +95,6 @@ const ProductBox = ({
 };
 
 ProductBox.propTypes = {
-  id: PropTypes.string,
   children: PropTypes.node,
   id: PropTypes.number,
   name: PropTypes.string,
