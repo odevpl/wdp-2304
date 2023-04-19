@@ -120,7 +120,9 @@ class NewFurniture extends React.Component {
                   )
                   .map(item => (
                     <div key={item.id} className={'col-12 col-sm-6 col-md-4 col-lg-3'}>
-                      <ProductBox {...item} />
+                      <div className={`${fade ? styles.fadeOut : styles.fadeIn}`}>
+                        <ProductBox {...item} />
+                      </div>
                     </div>
                   ))}
               </div>
