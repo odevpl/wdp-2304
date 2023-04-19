@@ -81,12 +81,15 @@ $product-box-old-price: $lightBlack;
 $product-box-old-price-text: $white;
 $product-box-old-price-text-after: $white;
 $product-box-text: $orange;
-$product-box-stars: $nero;
-$product-box-stars-selected: $orange;
 $product-box-line: $darkGray;
 $product-box-border-bottom: $orange;
 $product-box-icon-bg-active: $orange;
 $product-box-icon-color-active: $white;
+
+//ProductRating.module.scss
+$product-rating-stars: $nero;
+$product-rating-stars-selected: $orange;
+$product-rating-text: $orange;
 
 //FeatureBox.module.scss
 $feature-box-border: $shadeGray;

@@ -5,40 +5,23 @@
   text-align: center;
 
   h5 {
-    color: $product-box-text;
+    color: $product-rating-text;
     font-size: 16px;
     letter-spacing: 1px;
     line-height: 24px;
   }
 
   .stars {
+    display: flex;
+    justify-content: center;
+
     a {
-      color: $product-box-stars;
+      color: $product-rating-stars;
       text-decoration: none;
     }
 
     .hoverStars {
-      color: $product-box-stars-selected;
-    }
-  }
-}
-@import "../../../styles/settings.scss";
-
-.content {
-  padding: 20px;
-  text-align: center;
-
-  h5 {
-    color: $product-box-text;
-    font-size: 16px;
-    letter-spacing: 1px;
-    line-height: 24px;
-  }
-
-  .stars {
-    a {
-      color: $product-box-stars;
-      text-decoration: none;
+      color: $product-rating-stars-selected;
     }
   }
 }
