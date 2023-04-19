@@ -319,6 +319,21 @@ const initialState = {
     fourthBrand: '/images/brands/logo4.avif',
     fifthBrand: '/images/brands/logo5.avif',
   },
+  promotions: {
+    firstBoxImage: '/images/sectionPromotions/first-box.jpeg',
+    firstBoxTitle: 'GUEST ROOM',
+    firstBoxFurniture: 'SOFA',
+    firstBoxDiscount: '-30%',
+    secondBoxImage: '/images/sectionPromotions/second-box.jpg',
+    secondBoxTitle: 'DINNER',
+    secondBoxFutniture: 'CHAIRS',
+    secondBoxText: 'COLLECTION',
+    secondBoxPrice: '$100.00',
+    thirdBoxImage: '/images/sectionPromotions/third-box.jpg',
+    thirdBoxTitle: 'SPECIAL',
+    thirdBoxText: 'COLLECTION',
+    thirdBoxContent: 'SAVE UP TO 50% OF FURNITURE',
+  },
 };
 
 export default initialState;

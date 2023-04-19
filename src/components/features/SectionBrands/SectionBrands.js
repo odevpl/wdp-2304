@@ -14,19 +14,19 @@ const SectionBrands = () => {
         <div className={styles.cardContent}>
           <FontAwesomeIcon icon={faChevronLeft} className={styles.arrow} />
           <div className={styles.brandImage}>
-            <img src={brands.firstBrand}></img>
+            <img src={brands.firstBrand} alt='brand' />
           </div>
           <div className={styles.brandImage}>
-            <img src={brands.secondBrand}></img>
+            <img src={brands.secondBrand} alt='brand' />
           </div>
           <div className={styles.brandImage}>
-            <img src={brands.thirdBrand}></img>
+            <img src={brands.thirdBrand} alt='brand' />
           </div>
           <div className={styles.brandImage}>
-            <img src={brands.fourthBrand}></img>
+            <img src={brands.fourthBrand} alt='brand' />
           </div>
           <div className={styles.brandImage}>
-            <img src={brands.fifthBrand}></img>
+            <img src={brands.fifthBrand} alt='brand' />
           </div>
           <FontAwesomeIcon icon={faChevronRight} className={styles.arrow} />
         </div>

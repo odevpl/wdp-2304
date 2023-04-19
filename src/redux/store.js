@@ -6,6 +6,7 @@ import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import screenReducer from './screenSizeRedux';
+import promotionsReducer from './promotionsRedux';
 
 // define reducers
 const reducers = {
@@ -14,6 +15,7 @@ const reducers = {
   products: productsReducer,
   brands: brandsReducer,
   screenMode: screenReducer,
+  promotions: promotionsReducer,
 };
 
 // add blank reducers for initial state properties without reducers
