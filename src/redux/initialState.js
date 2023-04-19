@@ -13,7 +13,6 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      userStars: 3,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-105004.jpeg',
