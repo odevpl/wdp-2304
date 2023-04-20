@@ -10,6 +10,7 @@ import SectionPromotions from '../../features/SectionPromotions/SectionPromotion
 import ChatBot from '../../features/ChatBot/ChatBot';
 import FurnitureGallery from '../../features/Furniture Gallery/FurnitureGalleryContainer';
 import ClientFeedback from '../../features/ClientFeedback/ClientFeedback';
+import LatestBlog from '../../features/LatestBlog/LatestBlog';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -17,6 +18,7 @@ const Homepage = () => (
     <SectionPromotions />
     <NewFurniture />
     <FurnitureGallery />
+    <LatestBlog />
     <SectionBrands />
     <ChatBot />
     <ClientFeedback />
