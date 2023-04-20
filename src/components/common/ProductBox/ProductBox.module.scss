@@ -19,7 +19,7 @@
       repeat: no-repeat;
     }
     img {
-      height: 200px;
+      height: 100%;
       width: 100%;
       object-fit: cover;
     }
@@ -69,27 +69,6 @@
     }
   }
 
-  .content {
-    text-align: center;
-    padding: 20px;
-
-    h5 {
-      color: $product-box-text;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: 1px;
-    }
-
-    .stars {
-      display: flex;
-      justify-content: center;
-      a {
-        text-decoration: none;
-        color: $product-box-stars;
-      }
-    }
-  }
-
   .line {
     margin: 0 10px;
     border-bottom: 1px solid $product-box-line;
@@ -118,10 +97,5 @@
       background-color: $product-box-icon-bg-active;
       color: $product-box-icon-color-active;
     }
-  }
-
-  .content .stars {
-    display: flex;
-    justify-content: center;
   }
 }

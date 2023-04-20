@@ -10,19 +10,32 @@ class NewFurniture extends React.Component {
     activePage: 0,
     activeCategory: 'bed',
     showStickyBar: true,
+    fade: false,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ fade: true });
+    setTimeout(() => {
+      this.setState({ activePage: newPage });
+      setTimeout(() => {
+        this.setState({ fade: false });
+      }, 0);
+    }, 500);
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ fade: true });
+    setTimeout(() => {
+      this.setState({ activeCategory: newCategory });
+      setTimeout(() => {
+        this.setState({ fade: false });
+      }, 0);
+    }, 500);
   }
 
   render() {
     const { categories, products, screenMode } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, fade } = this.state;
 
     const productsPerPage = () => {
       if (screenMode === 'tablet') {
@@ -98,21 +111,23 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
+            <Swipeable leftAction={leftAction} rightAction={RightAction}>
+              <div className='row'>
+                {categoryProducts
+                  .slice(
+                    activePage * productsPerPage(),
+                    (activePage + 1) * productsPerPage()
+                  )
+                  .map(item => (
+                    <div key={item.id} className={'col-12 col-sm-6 col-md-4 col-lg-3'}>
+                      <div className={`${fade ? styles.fadeOut : styles.fadeIn}`}>
+                        <ProductBox {...item} />
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </Swipeable>
           </div>
-          <Swipeable leftAction={leftAction} rightAction={RightAction}>
-            <div className='row'>
-              {categoryProducts
-                .slice(
-                  activePage * productsPerPage(),
-                  (activePage + 1) * productsPerPage()
-                )
-                .map(item => (
-                  <div key={item.id} className={'col-12 col-sm-6 col-md-4 col-lg-3'}>
-                    <ProductBox {...item} />
-                  </div>
-                ))}
-            </div>
-          </Swipeable>
         </div>
         <StickyBar products={selectedProducts} />
       </>

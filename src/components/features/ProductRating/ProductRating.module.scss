@@ -1,0 +1,27 @@
+@import "../../../styles/settings.scss";
+
+.content {
+  padding: 20px;
+  text-align: center;
+
+  h5 {
+    color: $product-rating-text;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 24px;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+
+    a {
+      color: $product-rating-stars;
+      text-decoration: none;
+    }
+
+    .hoverStars {
+      color: $product-rating-stars-selected;
+    }
+  }
+}

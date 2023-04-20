@@ -16,6 +16,8 @@ $whiteGray: rgb(169, 169, 169);
 $mistyWhite: rgb(216, 216, 216);
 $tintedWhite: rgb(224, 227, 237);
 $nero: rgb(42, 42, 42);
+$darkGrayTransparent: rgb(0 0 0 / 60%);
+$green: #79ae30;
 
 //COLORS USED IN PROJECT
 
@@ -81,11 +83,15 @@ $product-box-old-price: $lightBlack;
 $product-box-old-price-text: $white;
 $product-box-old-price-text-after: $white;
 $product-box-text: $orange;
-$product-box-stars: $nero;
 $product-box-line: $darkGray;
 $product-box-border-bottom: $orange;
 $product-box-icon-bg-active: $orange;
 $product-box-icon-color-active: $white;
+
+//ProductRating.module.scss
+$product-rating-stars: $nero;
+$product-rating-stars-selected: $orange;
+$product-rating-text: $orange;
 
 //FeatureBox.module.scss
 $feature-box-border: $shadeGray;
@@ -112,6 +118,20 @@ $button-icon-border: $darkGray;
 $button-icon-color: $darkGray;
 $button-icon-hover-bg: $darkGray;
 $button-icon-hover-color: $white;
+
+//FurnitureGallery.module.scss and FurnitureGallerySlider.scss
+$furnitureGallerySlider-button-bg: $darkGray;
+$furnitureGallerySlider-button-font: $white;
+$furnitureGallerySlider-button-font-hover: $orange;
+$furnitureGallery-boxBorder: $darkenedWhite;
+$furnitureGallery-button-category-hover: $darkenedWhite;
+$furnitureGallery-button-category-border-hover: $orange;
+$furnitureGallery-button-icon-bg: $white;
+$furnitureGallery-content-stars-bg: $white;
+$furnitureGallery-cirkle-bg: $darkGrayTransparent;
+$furnitureGallery-bigPicture-price: $green;
+$furnitureGallery-bigPicture-button: $green;
+$furnitureGallerySlider-bigPicture-button-font: $orange;
 
 //MenuDropdown.module.scss
 $MenuDropdown-icon-border: $orange;
