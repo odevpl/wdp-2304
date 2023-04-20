@@ -7,6 +7,7 @@ import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import SectionBrands from '../../features/SectionBrands/SectionBrands';
 import SectionPromotions from '../../features/SectionPromotions/SectionPromotions';
+import ChatBot from '../../features/ChatBot/ChatBot';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -14,6 +15,7 @@ const Homepage = () => (
     <SectionPromotions />
     <NewFurniture />
     <SectionBrands />
+    <ChatBot />
   </div>
 );
 
