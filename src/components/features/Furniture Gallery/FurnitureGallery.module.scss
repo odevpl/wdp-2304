@@ -1,0 +1,257 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  display: flex;
+
+  .panelBar {
+    margin-bottom: 30px;
+    position: relative;
+
+    :global(.row) > * {
+      border-bottom: 4px solid $panel-bar-border-bottom;
+    }
+
+    .heading {
+      position: relative;
+
+      h3 {
+        color: $new-furniture-heading-color;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $new-furniture-heading-color-before;
+      }
+    }
+  }
+
+  .box {
+    border: 1px solid $furnitureGallery-boxBorder;
+
+    .menu {
+      text-align: center;
+      padding: 0;
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        padding-left: 0;
+        justify-content: inherit;
+        margin-bottom: 0;
+
+        li {
+          height: 45px;
+          text-transform: uppercase;
+          flex: 1;
+          display: flex;
+          font-weight: 600;
+          border-right: solid 1px $furnitureGallery-boxBorder;
+          border-bottom: solid 1px $furnitureGallery-boxBorder;
+          justify-content: center;
+          align-items: center;
+
+          &:hover {
+            border-bottom: none;
+            background-color: $furnitureGallery-button-category-hover;
+            border-top: 2px solid $furnitureGallery-button-category-border-hover;
+          }
+        }
+      }
+    }
+
+    .imageBox {
+      height: 409px;
+      position: relative;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .iconButtons {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 50%;
+        left: 2%;
+        transform: translateY(-50%);
+
+        .iconButton {
+          margin-bottom: 6px;
+          background-color: $furnitureGallery-button-icon-bg;
+          position: relative;
+
+          &:hover {
+            color: $furnitureGallerySlider-button-font-hover;
+            border-color: $furnitureGallery-button-category-border-hover;
+          }
+
+          &:hover > .iconCloud {
+            display: inherit;
+          }
+
+          .iconCloud {
+            padding: 2px;
+            color: $furnitureGallerySlider-button-font;
+            position: absolute;
+            left: 50px;
+            top: 0%;
+            width: 120px;
+            background-color: $furnitureGallerySlider-button-bg;
+            transform: translateY(15%);
+            align-content: flex-start;
+            text-align: center;
+            display: none;
+
+            &::after {
+              content: "";
+              position: absolute;
+              left: -2%;
+              top: 25%;
+              width: 15px;
+              height: 15px;
+              background-color: $furnitureGallerySlider-button-bg;
+              transform: rotate(320deg);
+              z-index: -1;
+            }
+          }
+        }
+      }
+
+      .content {
+        text-align: center;
+        padding: 15px;
+        position: absolute;
+        max-width: 250px;
+        bottom: 20px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $furnitureGallery-content-stars-bg;
+
+        h5 {
+          color: $product-box-text;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 1px;
+        }
+
+        .triangle {
+          width: 0;
+          height: 0;
+          border-left: 20px solid $furnitureGallerySlider-button-bg;
+          border-right: 20px solid transparent;
+          border-bottom: 20px solid transparent;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .triangle2 {
+          width: 0;
+          height: 0;
+          border-left: 20px solid $furnitureGallerySlider-button-bg;
+          border-right: 20px solid transparent;
+          border-bottom: 20px solid transparent;
+          transform: rotate(180deg);
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+
+        .stars {
+          display: flex;
+          justify-content: center;
+
+          a {
+            text-decoration: none;
+            color: $product-box-stars;
+          }
+        }
+      }
+
+      .cirkle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: $furnitureGallery-cirkle-bg;
+        bottom: 23%;
+        right: 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $furnitureGallerySlider-button-font;
+      }
+    }
+
+    .sliderBox {
+      height: 88px;
+      padding: 8px 50px;
+    }
+  }
+
+  .rightSection {
+    .image {
+      height: 620px;
+      position: relative;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .sale {
+        position: absolute;
+        top: 70px;
+        left: 60px;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 600;
+
+        .price {
+          color: $furnitureGallery-bigPicture-price;
+          font-size: 48px;
+          margin-left: 5px;
+        }
+      }
+
+      .name {
+        position: absolute;
+        top: 130px;
+        left: 60px;
+        font-weight: 600;
+        font-size: 45px;
+        color: $furnitureGallerySlider-bigPicture-button-font;
+      }
+
+      .button {
+        position: absolute;
+        top: 270px;
+        left: 60px;
+        width: 136px;
+        height: 54px;
+        border-radius: 3px;
+        background-color: $furnitureGallery-bigPicture-button;
+        color: $furnitureGallerySlider-button-font;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 15px;
+      }
+    }
+  }
+}

@@ -770,6 +770,14 @@ const initialState = {
       isSelected: false,
     },
   ],
+
+  galleryCategories: [
+    { id: 'featured', name: 'featured' },
+    { id: 'topSeller', name: 'top Seller' },
+    { id: 'saleOff', name: 'sale Off' },
+    { id: 'topRated', name: 'top Rated' },
+  ],
+
   cart: {
     products: [],
   },
