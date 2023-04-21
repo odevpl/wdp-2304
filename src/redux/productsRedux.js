@@ -2,6 +2,10 @@
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
 export const addUserStars = payload => ({ type: ADD_USER_STARS, payload });
+export const getProductById = ({ products }, productId) =>
+  products.find(product => `${product.category}-${product.id}` === productId);
+export const getProductByCategory = ({ products }, productCategory) =>
+  products.filter(product => product.category === productCategory);
 
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);

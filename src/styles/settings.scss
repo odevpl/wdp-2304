@@ -18,6 +18,9 @@ $tintedWhite: rgb(224, 227, 237);
 $nero: rgb(42, 42, 42);
 $darkGrayTransparent: rgb(0 0 0 / 60%);
 $green: #79ae30;
+$opacity: rgba(42, 42, 42, 0);
+$blue: #4267b2;
+$red: #cc0000;
 
 //COLORS USED IN PROJECT
 
@@ -154,8 +157,8 @@ $card-bg-color: $shadeGray;
 //StickyBar.module.scss
 $sticky-bar-image-icon: $darkGray;
 $sticky-bar-background: $white;
-$sticky-bar-compare-button:$orange;
-$sticky-bar-compare-button-hover:$white;
+$sticky-bar-compare-button: $orange;
+$sticky-bar-compare-button-hover: $white;
 
 //Promotion.module.scss
 $boxes-text-color: $white;
@@ -177,3 +180,22 @@ $chatbox-header-icons: $darkGray;
 $chatbox-bot-icon: $orange;
 $chatbox-bot-message: $tintedWhite;
 $chatbox-plane-icon: $orange;
+
+//ProductPage.module.scss
+$button-slider-bg: $orange;
+$button-slider-bg-opacity: $opacity;
+$button-slider-border: $darkGray;
+$button-slider-font-hover: $white;
+$button-slider-font: $darkGray;
+$ProductPage-font-light: $lightGray;
+$ProductPage-line: $shadeGray;
+$ProductPage-font-light: $shadeGray;
+$ProductPage-font-bg: $darkGray;
+$ProductPage-font-white: $white;
+$ProductPage-font-button: $orange;
+$ProductPage-border-button: $orange;
+$Icon-facebook: $blue;
+$Icon-google: $red;
+$Icon-twitter: $blue;
+$Icon-pinterest: $red;
+$Icon-linkid: $blue;
