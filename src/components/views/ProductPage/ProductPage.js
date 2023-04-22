@@ -19,6 +19,7 @@ import {
   faPinterestP,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
@@ -190,6 +191,7 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+      <NewFurniture variant='productPage' />
     </div>
   );
 };
