@@ -42,8 +42,14 @@ const ProductRating = props => {
     else return styles.stars;
   };
 
+  const classes = [];
+
+  if (props.noPadding) {
+    classes.push(styles.noPadding);
+  }
+
   return (
-    <div className={styles.content}>
+    <div className={` ${styles.content} ${classes.join(' ')}`}>
       <h5>{props.name}</h5>
       <div className={styles.stars}>
         {[1, 2, 3, 4, 5].map(i => (
@@ -70,6 +76,7 @@ ProductRating.propTypes = {
   name: PropTypes.string,
   stars: PropTypes.number,
   userStars: PropTypes.number,
+  noPadding: PropTypes.bool,
 };
 
 export default ProductRating;

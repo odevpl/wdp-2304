@@ -1,0 +1,57 @@
+@import "../../../styles/settings.scss";
+
+.sliderBox {
+  position: relative;
+
+  .tns-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    button {
+      width: 30px;
+      height: 30px;
+      background-color: $button-slider-bg-opacity;
+      color: $button-slider-font;
+      z-index: 1;
+      border: 2px solid $button-slider-border;
+      &.active,
+      &:hover {
+        color: $button-slider-font-hover;
+        border: none;
+        background-color: $button-slider-bg;
+        @extend %hover-animation;
+      }
+    }
+
+    button:nth-of-type(1) {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    button:nth-of-type(2) {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .tns-ovh .tns-inner .tns-slider {
+    .tns-item {
+      width: 90px;
+      height: 90px;
+      margin: 0 3.5px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
