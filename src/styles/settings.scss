@@ -16,6 +16,11 @@ $whiteGray: rgb(169, 169, 169);
 $mistyWhite: rgb(216, 216, 216);
 $tintedWhite: rgb(224, 227, 237);
 $nero: rgb(42, 42, 42);
+$darkGrayTransparent: rgb(0 0 0 / 60%);
+$green: #79ae30;
+$opacity: rgba(42, 42, 42, 0);
+$blue: #4267b2;
+$red: #cc0000;
 
 //COLORS USED IN PROJECT
 
@@ -117,6 +122,20 @@ $button-icon-color: $darkGray;
 $button-icon-hover-bg: $darkGray;
 $button-icon-hover-color: $white;
 
+//FurnitureGallery.module.scss and FurnitureGallerySlider.scss
+$furnitureGallerySlider-button-bg: $darkGray;
+$furnitureGallerySlider-button-font: $white;
+$furnitureGallerySlider-button-font-hover: $orange;
+$furnitureGallery-boxBorder: $darkenedWhite;
+$furnitureGallery-button-category-hover: $darkenedWhite;
+$furnitureGallery-button-category-border-hover: $orange;
+$furnitureGallery-button-icon-bg: $white;
+$furnitureGallery-content-stars-bg: $white;
+$furnitureGallery-cirkle-bg: $darkGrayTransparent;
+$furnitureGallery-bigPicture-price: $green;
+$furnitureGallery-bigPicture-button: $green;
+$furnitureGallerySlider-bigPicture-button-font: $orange;
+
 //MenuDropdown.module.scss
 $MenuDropdown-icon-border: $orange;
 $MenuDropdown-icon-background: $orange;
@@ -138,8 +157,8 @@ $card-bg-color: $shadeGray;
 //StickyBar.module.scss
 $sticky-bar-image-icon: $darkGray;
 $sticky-bar-background: $white;
-$sticky-bar-compare-button:$orange;
-$sticky-bar-compare-button-hover:$white;
+$sticky-bar-compare-button: $orange;
+$sticky-bar-compare-button-hover: $white;
 
 //Promotion.module.scss
 $boxes-text-color: $white;
@@ -147,3 +166,22 @@ $price-border-color: $white;
 $second-box-title-color: $orange;
 $second-box-price-color: $orange;
 $third-box-title-color: $orange;
+
+//ProductPage.module.scss
+$button-slider-bg: $orange;
+$button-slider-bg-opacity: $opacity;
+$button-slider-border: $darkGray;
+$button-slider-font-hover: $white;
+$button-slider-font: $darkGray;
+$ProductPage-font-light: $lightGray;
+$ProductPage-line: $shadeGray;
+$ProductPage-font-light: $shadeGray;
+$ProductPage-font-bg: $darkGray;
+$ProductPage-font-white: $white;
+$ProductPage-font-button: $orange;
+$ProductPage-border-button: $orange;
+$Icon-facebook: $blue;
+$Icon-google: $red;
+$Icon-twitter: $blue;
+$Icon-pinterest: $red;
+$Icon-linkid: $blue;

@@ -25,3 +25,8 @@
     }
   }
 }
+
+.noPadding {
+  @extend .content;
+  padding: 0;
+}

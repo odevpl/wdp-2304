@@ -19,6 +19,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-105004.jpeg',
       favorite: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -33,6 +36,9 @@ const initialState = {
       compare: true,
       favorite: false,
       isSelected: false,
+      availability: false,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -46,6 +52,9 @@ const initialState = {
       favorite: true,
       compare: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -58,6 +67,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-775219.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -71,6 +83,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-932095.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -83,6 +98,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-1571471.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -96,6 +114,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-1866149.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -108,6 +129,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-2082092.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -121,6 +145,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-2258083.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -133,6 +160,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-2647714.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -145,6 +175,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-2762247.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -158,6 +191,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-3771691.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -170,6 +206,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-3932930.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -182,6 +221,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-6480198.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -194,6 +236,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-6510974.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -207,6 +252,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-6580396.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -219,6 +267,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-7746471.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -232,6 +283,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-7821342.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-19',
@@ -245,6 +299,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-8989344.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -257,6 +314,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-9968385.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -270,6 +330,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-10758469.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-22',
@@ -282,6 +345,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-14002096.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-23',
@@ -294,6 +360,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-14656123.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'aenean-ru-bristique-24',
@@ -307,6 +376,9 @@ const initialState = {
       image: '/images/products/bed/pexels-photo-1080696.jpeg',
       favorite: false,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-1',
@@ -319,6 +391,9 @@ const initialState = {
       image: '/images/products/chair/pexels-photo-96940.jpeg',
       favorite: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-2',
@@ -332,6 +407,9 @@ const initialState = {
       image: '/images/products/chair/pexels-photo-220749.jpeg',
       compare: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-3',
@@ -345,6 +423,9 @@ const initialState = {
       favorite: true,
       compare: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-4',
@@ -356,6 +437,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-923192.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-5',
@@ -368,6 +452,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-930390.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-6',
@@ -379,6 +466,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-1321290.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-7',
@@ -391,6 +481,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-2179214.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-8',
@@ -402,6 +495,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-2180883.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-9',
@@ -414,6 +510,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-2258083.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-10',
@@ -425,6 +524,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-2606612.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-11',
@@ -436,6 +538,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-2762247.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-12',
@@ -448,6 +553,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-2747070.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-13',
@@ -459,6 +567,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-3705539.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-14',
@@ -470,6 +581,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-4210805.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-15',
@@ -481,6 +595,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-8082560.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'bristique-16',
@@ -493,6 +610,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-8581051.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'sofa-1',
@@ -505,6 +625,9 @@ const initialState = {
       image: '/images/products/sofa/pexels-photo-269129.jpeg',
       favorite: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'sofa-2',
@@ -518,6 +641,9 @@ const initialState = {
       image: '/images/products/sofa/pexels-photo-269218.jpeg',
       compare: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'sofa-3',
@@ -531,6 +657,9 @@ const initialState = {
       favorite: true,
       compare: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'sofa-4',
@@ -542,6 +671,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-1362385.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'sofa-5',
@@ -554,6 +686,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-1543447.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'sofa-6',
@@ -565,6 +700,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-1571470.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'sofa-7',
@@ -577,6 +715,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-1643383.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'sofa-8',
@@ -588,6 +729,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-3209045.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'sofa-9',
@@ -600,6 +744,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-1918291.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'table-1',
@@ -612,6 +759,9 @@ const initialState = {
       image: '/images/products/table/pexels-photo-631411.jpeg',
       favorite: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'table-2',
@@ -625,6 +775,9 @@ const initialState = {
       image: '/images/products/table/pexels-photo-827528.jpeg',
       compare: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'table-3',
@@ -638,6 +791,9 @@ const initialState = {
       favorite: true,
       compare: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'table-4',
@@ -649,6 +805,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/table/pexels-photo-1008692.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'table-5',
@@ -661,6 +820,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/table/pexels-photo-1080696.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'table-6',
@@ -672,6 +834,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/table/pexels-photo-2092058.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'table-7',
@@ -684,6 +849,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/table/pexels-photo-2376971.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'table-8',
@@ -695,6 +863,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/table/pexels-photo-2451264.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'table-9',
@@ -707,6 +878,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/table/pexels-photo-3144581.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'dining-1',
@@ -719,6 +893,9 @@ const initialState = {
       image: '/images/products/dining/pexels-photo-262978.jpeg',
       favorite: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'dining-2',
@@ -732,6 +909,9 @@ const initialState = {
       image: '/images/products/dining/pexels-photo-299348.jpeg',
       compare: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'dining-3',
@@ -745,6 +925,9 @@ const initialState = {
       favorite: true,
       compare: true,
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'dining-4',
@@ -756,6 +939,9 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/dining/pexels-photo-1395967.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
       id: 'dining-5',
@@ -768,8 +954,19 @@ const initialState = {
       newFurniture: true,
       image: '/images/products/dining/pexels-photo-3184188.jpeg',
       isSelected: false,
+      availability: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
   ],
+
+  galleryCategories: [
+    { id: 'featured', name: 'featured' },
+    { id: 'topSeller', name: 'top Seller' },
+    { id: 'saleOff', name: 'sale Off' },
+    { id: 'topRated', name: 'top Rated' },
+  ],
+
   cart: {
     products: [],
   },
