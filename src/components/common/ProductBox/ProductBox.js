@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
@@ -16,26 +16,35 @@ import { removeSelected } from '../../../redux/productsRedux';
 import { getSelected } from '../../../redux/productsRedux';
 
 import { toggleFavorite } from '../../../redux/productsRedux';
+import ProductPopUp from '../ProductPopUp/ProductPopUp';
 
-const ProductBox = ({
-  id,
-  name,
-  price,
-  promo,
-  stars,
-  userStars,
-  favorite,
-  compare,
-  image,
-  category,
-  oldPrice,
-  isSelected,
-}) => {
+const ProductBox = props => {
+  const {
+    id,
+    name,
+    price,
+    promo,
+    stars,
+    userStars,
+    favorite,
+    compare,
+    image,
+    category,
+    oldPrice,
+    isSelected,
+  } = props;
   const dispatch = useDispatch();
 
   const handleFavorite = e => {
     e.preventDefault();
     dispatch(toggleFavorite(id));
+  };
+
+  const [popUp, setPopUp] = useState(false);
+
+  const openPopUp = e => {
+    e.preventDefault();
+    setPopUp(true);
   };
 
   const selectedProducts = useSelector(state => getSelected(state));
@@ -52,6 +61,7 @@ const ProductBox = ({
   };
   return (
     <div className={styles.root}>
+      {popUp && <ProductPopUp popUpOpen={setPopUp} productData={props}></ProductPopUp>}
       <div className={styles.photo}>
         <Link to={`/product/${`${category}-${id}`}`}>
           <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
@@ -59,7 +69,9 @@ const ProductBox = ({
         {promo && <div className={styles.sale}>{promo}</div>}
         {oldPrice && <div className={styles.oldPrice}>$ {oldPrice}</div>}
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+          <Button onClick={openPopUp} variant='small'>
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>

@@ -1,0 +1,66 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .featureBar {
+    margin-bottom: 30px;
+    position: relative;
+
+    .heading {
+      position: relative;
+      width: 100%;
+      border-bottom: 4px solid $feature-bar-border-bottom;
+
+      h3 {
+        color: $client-feedback-heading-color;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $client-feedback-heading-color-before;
+      }
+    }
+
+    .dots {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        list-style: none;
+        background-color: $client-feedback-dots-bg-color;
+        transform: translateY(15px);
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: #e1e1e1;
+            font-size: 0;
+
+            &.active,
+            &:hover {
+              background-color: $client-feedback-dots-hover-active-color;
+              @extend %hover-animation;
+            }
+          }
+        }
+      }
+    }
+  }
+}

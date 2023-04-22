@@ -11,6 +11,8 @@ class NewFurniture extends React.Component {
     activeCategory: 'bed',
     showStickyBar: true,
     fade: false,
+    variant: this.props.variant,
+    classes: [],
   };
 
   handlePageChange(newPage) {
@@ -35,19 +37,20 @@ class NewFurniture extends React.Component {
 
   render() {
     const { categories, products, screenMode } = this.props;
-    const { activeCategory, activePage, fade } = this.state;
+    const { activeCategory, activePage, fade, variant, classes } = this.state;
 
     const productsPerPage = () => {
-      if (screenMode === 'tablet') {
-        return 3;
-      } else if (screenMode === 'mobile') {
-        return 2;
-      } else if (screenMode === 'small-mobile') {
-        return 1;
-      } else {
+      if (screenMode === 'tablet') return 3;
+      else if (screenMode === 'mobile') return 2;
+      else if (screenMode === 'small-mobile') return 1;
+      else {
+        if (variant === 'productPage') return 4;
         return 8;
       }
     };
+
+    if (variant) classes.push(styles[variant]);
+    else classes.push(styles.main);
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / productsPerPage());
@@ -84,7 +87,7 @@ class NewFurniture extends React.Component {
     const selectedProducts = products.filter(item => item.isSelected === true);
 
     return (
-      <>
+      <div className={classes.join(' ')}>
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>
@@ -130,7 +133,7 @@ class NewFurniture extends React.Component {
           </div>
         </div>
         <StickyBar products={selectedProducts} />
-      </>
+      </div>
     );
   }
 }
@@ -155,6 +158,8 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  activePage: PropTypes.number,
+  variant: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {

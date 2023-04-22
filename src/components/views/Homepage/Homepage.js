@@ -9,6 +9,8 @@ import SectionBrands from '../../features/SectionBrands/SectionBrands';
 import SectionPromotions from '../../features/SectionPromotions/SectionPromotions';
 import ChatBot from '../../features/ChatBot/ChatBot';
 import FurnitureGallery from '../../features/Furniture Gallery/FurnitureGalleryContainer';
+import ClientFeedback from '../../features/ClientFeedback/ClientFeedback';
+import LatestBlog from '../../features/LatestBlog/LatestBlog';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -16,8 +18,10 @@ const Homepage = () => (
     <SectionPromotions />
     <NewFurniture />
     <FurnitureGallery />
+    <LatestBlog />
     <SectionBrands />
     <ChatBot />
+    <ClientFeedback />
   </div>
 );
 
