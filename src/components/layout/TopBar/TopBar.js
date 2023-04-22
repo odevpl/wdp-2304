@@ -57,7 +57,7 @@ const TopBar = () => {
                 )}
               </li>
               <li>
-                <a href='#'>
+                <a href='/register'>
                   <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
                   <span className={styles.text}>Register</span>
                 </a>
