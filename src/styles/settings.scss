@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap");
+
+$font-feedback: "BIZ UDPGothic", sans-serif;
+
 $base-padding: 24px;
 
 //COLORS //NIE UŻYWAĆ Z ŻADNYM INNYM PLIKU
@@ -140,6 +144,15 @@ $furnitureGallerySlider-bigPicture-button-font: $orange;
 $MenuDropdown-icon-border: $orange;
 $MenuDropdown-icon-background: $orange;
 
+//ClientFeedback.module.scss
+$feature-bar-border-bottom: $darkenedWhite;
+$client-feedback-heading-color: $orange;
+$client-feedback-heading-color-before: $orange;
+$client-feedback-links-color: $nero;
+$client-feedback-links-color-hover: $orange;
+$client-feedback-dots-bg-color: $white;
+$client-feedback-dots-hover-active-color: $orange;
+
 /* hover effects */
 $hover-duration: 250ms;
 $hover-effect: all;
@@ -166,6 +179,20 @@ $price-border-color: $white;
 $second-box-title-color: $orange;
 $second-box-price-color: $orange;
 $third-box-title-color: $orange;
+
+//ChatBot
+$button-text: $white;
+$button-background: $orange;
+$chatbox-background: $lightWhite;
+$chatbox-header-background: $orange;
+$chatbox-border: $orange;
+$chatbox-header-border: $orange;
+$chatbox-message-border: $orange;
+$chatbox-message-bubble: $tintedWhite;
+$chatbox-header-icons: $darkGray;
+$chatbox-bot-icon: $orange;
+$chatbox-bot-message: $tintedWhite;
+$chatbox-plane-icon: $orange;
 
 //ProductPage.module.scss
 $button-slider-bg: $orange;

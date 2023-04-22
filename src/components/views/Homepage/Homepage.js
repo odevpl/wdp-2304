@@ -7,13 +7,19 @@ import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import SectionBrands from '../../features/SectionBrands/SectionBrands';
 import SectionPromotions from '../../features/SectionPromotions/SectionPromotions';
+import ChatBot from '../../features/ChatBot/ChatBot';
+import FurnitureGallery from '../../features/Furniture Gallery/FurnitureGalleryContainer';
+import ClientFeedback from '../../features/ClientFeedback/ClientFeedback';
 
 const Homepage = () => (
   <div className={styles.root}>
     <FeatureBoxes />
     <SectionPromotions />
     <NewFurniture />
+    <FurnitureGallery />
     <SectionBrands />
+    <ChatBot />
+    <ClientFeedback />
   </div>
 );
 
