@@ -1,7 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap");
-
-$font-feedback: "BIZ UDPGothic", sans-serif;
-
 $base-padding: 24px;
 
 //COLORS //NIE UŻYWAĆ Z ŻADNYM INNYM PLIKU
@@ -144,15 +140,6 @@ $furnitureGallerySlider-bigPicture-button-font: $orange;
 $MenuDropdown-icon-border: $orange;
 $MenuDropdown-icon-background: $orange;
 
-//ClientFeedback.module.scss
-$feature-bar-border-bottom: $darkenedWhite;
-$client-feedback-heading-color: $orange;
-$client-feedback-heading-color-before: $orange;
-$client-feedback-links-color: $nero;
-$client-feedback-links-color-hover: $orange;
-$client-feedback-dots-bg-color: $white;
-$client-feedback-dots-hover-active-color: $orange;
-
 /* hover effects */
 $hover-duration: 250ms;
 $hover-effect: all;
@@ -212,19 +199,3 @@ $Icon-google: $red;
 $Icon-twitter: $blue;
 $Icon-pinterest: $red;
 $Icon-linkid: $blue;
-
-//LatestBlog.module.scss
-$feature-bar-border-bottom: $darkenedWhite;
-$latest-blog-heading-color: $orange;
-$latest-blog-heading-color-before: $orange;
-$latest-blog-links-color: $nero;
-$latest-blog-links-color-hover: $orange;
-$latest-blog-dots-bg-color: $white;
-$latest-blog-dots-hover-active-color: $orange;
-
-//LatestBlogBox.module.scss
-$Latest-Blog-Box-upper-Layout: $shadeGray;
-$Latest-Blog-Box-button-text: $white;
-$Latest-Blog-Box-button-background: $darkGray;
-$Latest-Blog-Box-active-color: $orange;
-$Latest-Blog-Box-calendar: $shadeGray;

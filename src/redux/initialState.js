@@ -967,17 +967,6 @@ const initialState = {
     { id: 'topRated', name: 'top Rated' },
   ],
 
-  feedbacks: [
-    {
-      id: '1',
-      name: 'Barry White',
-      nickName: 'Funnbue Client',
-      content:
-        'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
-      image: '/images/feedback/barryWhite.jpg',
-    },
-  ],
-
   cart: {
     products: [],
   },
