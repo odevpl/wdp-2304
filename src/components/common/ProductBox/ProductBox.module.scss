@@ -7,6 +7,7 @@
 
   &:hover .photo .buttons {
     display: flex;
+    @extend %hover-animation;
   }
 
   .photo {
