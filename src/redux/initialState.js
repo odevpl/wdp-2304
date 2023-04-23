@@ -989,6 +989,7 @@ const initialState = {
     fourthBrand: '/images/brands/logo4.avif',
     fifthBrand: '/images/brands/logo5.avif',
   },
+
   promotions: {
     firstBoxImage: '/images/sectionPromotions/first-box.jpeg',
     firstBoxTitle: 'GUEST ROOM',
@@ -1014,6 +1015,7 @@ const initialState = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate dignissim porta. Phasellus eget augue at magna fringilla feugiat. Duis suscipit tellus at velit egestas pulvinar. Pellentesque scelerisque ligula ac diam mattis, egestas imperdiet ante mattis. Quisque tortor sapien, suscipit non augue elementum, consectetur pulvinar ex. Aliquam id mi non enim gravida iaculis. Cras et cursus dui. Donec in suscipit augue, vitae bibendum urna. Curabitur vitae nunc congue, dignissim tellus a, consectetur est. Nulla molestie tempor magna, a ',
     },
   ],
+
   promoted: {
     image: '/images/HotDeals/firstDeal.jpg',
     imageTitle: 'GUEST ROOM',
@@ -1021,6 +1023,9 @@ const initialState = {
     dealTitleHighlited: 'FURNITURE',
     dealDescription: 'SAVE UP TO 50% OF ALL FURNITURE',
   },
+
+  logOnUser: {},
+
 };
 
 export default initialState;

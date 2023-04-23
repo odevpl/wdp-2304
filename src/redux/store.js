@@ -11,6 +11,7 @@ import galleryCategoriesReducer from './galleryRedux';
 import feedbackReducer from './feedbackRedux';
 import blogReducer from './blogRedux';
 import promotedReducer from './promotedRedux';
+import logOnUserReducer from './logOnUserRedux';
 
 // define reducers
 const reducers = {
@@ -24,6 +25,7 @@ const reducers = {
   feedbacks: feedbackReducer,
   blog: blogReducer,
   promoted: promotedReducer,
+  logOnUser: logOnUserReducer,
 };
 
 // add blank reducers for initial state properties without reducers

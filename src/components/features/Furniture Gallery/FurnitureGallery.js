@@ -11,9 +11,8 @@ import {
   faEye,
   faHeart,
   faShoppingBasket,
-  faStar,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import ProductRating from '../ProductRating/ProductRating';
 
 class FurnitureGallery extends React.Component {
   render() {
@@ -77,18 +76,7 @@ class FurnitureGallery extends React.Component {
                     <h5>{products[0].name}</h5>
                     <div className={styles.triangle}></div>
                     <div className={styles.triangle2}></div>
-
-                    <div className={styles.stars}>
-                      {[1, 2, 3, 4, 5].map(i => (
-                        <a key={i} href='#'>
-                          {i <= products[0].stars ? (
-                            <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                          ) : (
-                            <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                          )}
-                        </a>
-                      ))}
-                    </div>
+                    <ProductRating />
                   </div>
                   <div className={styles.cirkle}>
                     {products[1].oldPrice && <div>$ {products[1].oldPrice}</div>}
