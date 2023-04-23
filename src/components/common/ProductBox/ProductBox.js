@@ -104,7 +104,7 @@ const ProductBox = props => {
 
 ProductBox.propTypes = {
   children: PropTypes.node,
-  id: PropTypes.number,
+  id: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,

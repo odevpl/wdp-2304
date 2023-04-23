@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .modal {
-  display: block;
+  display: block !important;
   background-color: rgb(0 0 0 / 50%);
   backdrop-filter: blur(5px);
 
