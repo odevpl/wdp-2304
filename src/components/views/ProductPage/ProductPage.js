@@ -21,6 +21,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import { addProduct } from '../../../redux/cartRedux';
+import Reviews from '../../features/Reviews/Reviews';
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
@@ -195,6 +196,7 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
+        <Reviews />
       </div>
       <NewFurniture variant='productPage' />
     </div>
