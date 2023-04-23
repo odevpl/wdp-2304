@@ -3,6 +3,11 @@ import { Form } from 'react-bootstrap';
 import styles from './RegistrationPage.module.scss';
 import Switch from 'react-switch';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from '../../common/Button/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
 const RegistrationPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,11 +16,7 @@ const RegistrationPage = () => {
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [selectAll, setSelectAll] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
 
-  const onSwitchAction = () => {
-    setIsSwitchOn(!isSwitchOn);
-  };
   const handleEmailChange = event => {
     setEmail(event.target.value);
   };
@@ -26,10 +27,6 @@ const RegistrationPage = () => {
 
   const handlePasswordConfirmChange = event => {
     setPasswordConfirm(event.target.value);
-  };
-
-  const handleShowPasswordToggle = () => {
-    setShowPassword(!showPassword);
   };
 
   const handleAgreeToTermsChange = () => {
@@ -48,8 +45,6 @@ const RegistrationPage = () => {
 
   const handleFormSubmit = event => {
     event.preventDefault();
-
-    // handle form submission logic here
   };
 
   return (
@@ -121,9 +116,20 @@ const RegistrationPage = () => {
             </Form.Group>
             <Form.Group className={styles.checkboxes}>
               <Form.Check
-                className={styles.checkbox}
+                className={styles.selectAll}
                 type='checkbox'
-                label='Akceptuję regulamin serwisu'
+                label='Zaznacz wszystkie'
+                checked={selectAll}
+                onChange={handleSelectAllChange}
+              />
+              <Form.Check
+                className={`${styles.checkbox} form-check-input-focus-border`}
+                type='checkbox'
+                label={
+                  <span>
+                    Akceptuję warunki <a href='/regulamin'> regulaminu *</a>
+                  </span>
+                }
                 checked={agreeToTerms}
                 onChange={handleAgreeToTermsChange}
               />
@@ -134,15 +140,16 @@ const RegistrationPage = () => {
                 checked={newsletter}
                 onChange={handleNewsletter}
               />
-              <div className={styles.selectAll}>
-                <Form.Check
-                  type='checkbox'
-                  label='Zaznacz wszystkie'
-                  checked={selectAll}
-                  onChange={handleSelectAllChange}
-                />
-              </div>
             </Form.Group>
+          </div>
+          <div className={styles.formFooter}>
+            <Link to='/'>
+              {' '}
+              <FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon> Wróć
+            </Link>
+            <Link to='/'>
+              <Button variant='orange'>Zarejestruj się</Button>
+            </Link>
           </div>
         </Form>
       </div>

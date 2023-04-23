@@ -72,3 +72,20 @@
     @extend %hover-animation;
   }
 }
+
+.orange{
+  border-radius: 5px;
+  background-color: $button-main-bg-hover;
+  color: $button-text !important;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 22px;
+
+  &:not(.noHover):hover {
+    text-decoration: none;
+    @extend %hover-animation;
+  }
+}
