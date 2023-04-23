@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
-
+//import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
-
 import styles from './TopBar.module.scss';
-//import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LoginModal from '../../features/LoginModal/LoginModal';
 import Button from '../../common/Button/Button';
+import { logOnUser } from '../../../redux/logOnUserRedux';
 
 const TopBar = () => {
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.logOnUser.user);
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   const handleCloseModal = () => setShowLoginModal(false);
   const handleShowModal = () => setShowLoginModal(true);
 
-  const onConfirmLogin = e => {
-    e.preventDefault();
-    //dispatch();
+  const onConfirmLogin = (email, password) => {
+    dispatch(logOnUser({ email: email, password: password }));
     handleCloseModal();
   };
 
@@ -48,10 +47,14 @@ const TopBar = () => {
           <div className={`col text-right ${styles.topMenu}`}>
             <ul>
               <li>
-                <Button onClick={handleShowModal}>
-                  <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
-                  <span className={styles.text}>Login</span>
-                </Button>
+                {user ? (
+                  <span className={styles.text}>{user.email}</span>
+                ) : (
+                  <Button onClick={handleShowModal}>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
+                    <span className={styles.text}>Login</span>
+                  </Button>
+                )}
               </li>
               <li>
                 <a href='#'>
@@ -75,6 +78,6 @@ const TopBar = () => {
   );
 };
 
-// TopBar.propTypes = {};
+//TopBar.propTypes = {};
 
 export default TopBar;

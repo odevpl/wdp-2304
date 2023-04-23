@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './LoginModal.module.scss';
-import Button from '../../common/Button/Button';
 
 const LoginModal = ({ onClose, handleLogin }) => {
+  /* dodałem prostą funkcję która z modala  dodaje użytkownika do logOnUser w state.
+  Następna osoba która będzie rozbudowywać o funkcję sprawdzania poprawności loginu i hasła, niech np storzy nowy state z zarejestrowanymi użytkownikami.
+  Potem niech usunie ten komenatrz... :) */
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = () => {
+    handleLogin(email, password);
+  };
+
   return (
     <div className={`modal ${styles.modal}`} tabIndex='-1' role='dialog'>
       <div className='modal-dialog' role='document'>
@@ -21,7 +31,7 @@ const LoginModal = ({ onClose, handleLogin }) => {
             </button>
           </div>
           <div className='modal-body'>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className='form-group'>
                 <label htmlFor='email'>Email address</label>
                 <input
@@ -30,6 +40,8 @@ const LoginModal = ({ onClose, handleLogin }) => {
                   id='email'
                   aria-describedby='emailHelp'
                   placeholder='Enter email'
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                 />
               </div>
               <div className='form-group'>
@@ -39,15 +51,17 @@ const LoginModal = ({ onClose, handleLogin }) => {
                   className='form-control'
                   id='password'
                   placeholder='Password'
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
                 />
                 <small className='form-text text-muted'>Forgot password?</small>
               </div>
+              <div className={`modal-footer ${styles.modalFooter}`}>
+                <button className={styles.button} type='submit'>
+                  Login
+                </button>
+              </div>
             </form>
-          </div>
-          <div className={`modal-footer ${styles.modalFooter}`}>
-            <Button className={styles.button} onClick={handleLogin}>
-              Login
-            </Button>
           </div>
         </div>
       </div>
