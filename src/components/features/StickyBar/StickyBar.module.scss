@@ -35,6 +35,7 @@
     }
 
     &:hover {
+      @extend %hover-animation;
       .stickyBarImageOverlay {
         opacity: 1;
       }
@@ -47,7 +48,6 @@
   }
 
   .compare_button {
-
     background-color: $sticky-bar-compare-button;
     width: auto;
     height: auto;
@@ -59,7 +59,7 @@
       color: $sticky-bar-background !important;
       background-color: $sticky-bar-compare-button;
       text-decoration: none;
+      @extend %hover-animation;
     }
   }
-
 }
