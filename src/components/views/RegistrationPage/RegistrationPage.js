@@ -11,7 +11,11 @@ const RegistrationPage = () => {
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [selectAll, setSelectAll] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
 
+  const onSwitchAction = () => {
+    setIsSwitchOn(!isSwitchOn);
+  };
   const handleEmailChange = event => {
     setEmail(event.target.value);
   };
@@ -69,61 +73,62 @@ const RegistrationPage = () => {
               id='new'
               value='new'
               defaultChecked
+              className='custom-control'
             />
           </div>
           <div className={styles.formBody}>
-            <h3>Podaj dane do rejestracji</h3>
-            <Form.Group controlId='emailInput'>
-              <Form.Label>Email:</Form.Label>
-              <Form.Control
-                type='email'
-                value={email}
-                onChange={handleEmailChange}
-                placeholder='E-mail *'
-              />
-            </Form.Group>
-            <Form.Group controlId='passwordInput'>
-              <Form.Label>Hasło:</Form.Label>
-              <Form.Control
-                type={showPassword ? 'text' : 'password'}
-                value={password}
-                onChange={handlePasswordChange}
-                placeholder='Hasło *'
-              />
-            </Form.Group>
-            <Form.Group controlId='passwordConfirmInput'>
-              <Form.Label>Powtórz hasło:</Form.Label>
-              <Form.Control
-                type={showPassword ? 'text' : 'password'}
-                value={passwordConfirm}
-                onChange={handlePasswordConfirmChange}
-                placeholder='Powtórz hasło *'
-              />
-            </Form.Group>
-            <Form.Group controlId='showPasswordSwitch'>
+            <h5>Podaj dane do rejestracji</h5>
+            <div className={styles.formInputs}>
+              <Form.Group controlId='emailInput'>
+                <Form.Control
+                  type='email'
+                  value={email}
+                  onChange={handleEmailChange}
+                  placeholder='E-mail *'
+                />
+              </Form.Group>
+              <Form.Group controlId='passwordInput'>
+                <Form.Control
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={handlePasswordChange}
+                  placeholder='Hasło *'
+                />
+              </Form.Group>
+              <Form.Group controlId='passwordConfirmInput'>
+                <Form.Control
+                  type={showPassword ? 'text' : 'password'}
+                  value={passwordConfirm}
+                  onChange={handlePasswordConfirmChange}
+                  placeholder='Powtórz hasło *'
+                />
+              </Form.Group>
+            </div>
+            <Form.Group
+              controlId='showPasswordSwitch'
+              className='d-flex justify-content-end'
+            >
               <Switch
                 id='showPasswordSwitch'
                 type='switch'
-                label={showPassword ? 'Ukryj hasło' : 'Pokaż hasło'}
                 checked={showPassword}
                 onChange={() => setShowPassword(!showPassword)}
+                label='Pokaż hasło'
               />
+              <Form.Label htmlFor='showPasswordSwitch' className='ml-2'>
+                {showPassword ? 'Ukryj hasło' : 'Pokaż hasło'}
+              </Form.Label>
             </Form.Group>
-            <Form>
-              <Form.Check
-                type='switch'
-                id='flexSwitchCheckDefault'
-                label='Default switch checkbox input'
-              />
-            </Form>
             <Form.Group className={styles.checkboxes}>
               <Form.Check
+                className={styles.checkbox}
                 type='checkbox'
                 label='Akceptuję regulamin serwisu'
                 checked={agreeToTerms}
                 onChange={handleAgreeToTermsChange}
               />
               <Form.Check
+                className={styles.checkbox}
                 type='checkbox'
                 label='Zapisz mnie na newsletter'
                 checked={newsletter}
