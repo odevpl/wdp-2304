@@ -6,7 +6,7 @@
 
 .imageBox img {
   width: 100%;
-  height: 100%;
+  height: 370px;
   object-fit: cover;
   object-position: center;
 }
@@ -101,3 +101,21 @@
   }
 }
 
+@media (max-width: 991px) {
+  .thirdImageContent {
+    left: 40%
+  }
+}
+
+@media (max-width: 767px) {
+  .imageBox {
+    padding-bottom: 20px;
+    &:before {
+      height: 87%;
+    }
+  }
+
+  .thirdImageContent {
+    left: 30%
+  }
+}
