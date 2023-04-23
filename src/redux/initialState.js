@@ -1004,6 +1004,16 @@ const initialState = {
     thirdBoxText: 'COLLECTION',
     thirdBoxContent: 'SAVE UP TO 50% OF FURNITURE',
   },
+
+  blog: [
+    {
+      id: 1,
+      title: 'BLOG ONE',
+      image: '/images/blog/blog1.avif',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate dignissim porta. Phasellus eget augue at magna fringilla feugiat. Duis suscipit tellus at velit egestas pulvinar. Pellentesque scelerisque ligula ac diam mattis, egestas imperdiet ante mattis. Quisque tortor sapien, suscipit non augue elementum, consectetur pulvinar ex. Aliquam id mi non enim gravida iaculis. Cras et cursus dui. Donec in suscipit augue, vitae bibendum urna. Curabitur vitae nunc congue, dignissim tellus a, consectetur est. Nulla molestie tempor magna, a ',
+    },
+  ],
 };
 
 export default initialState;
