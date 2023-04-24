@@ -1,0 +1,10 @@
+@import "../../../styles/settings.scss";
+
+.button {
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 5px 15px;
+  background-color: $cartButton-bg;
+  border: 1px solid $cartButton-bg;
+  color: $cartButton-font;
+}

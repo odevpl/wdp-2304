@@ -22,6 +22,7 @@ $tintedWhite: rgb(224, 227, 237);
 $nero: rgb(42, 42, 42);
 $darkGrayTransparent: rgb(0 0 0 / 60%);
 $green: #79ae30;
+$brightGreen: #95d639;
 $opacity: rgba(42, 42, 42, 0);
 $blue: #4267b2;
 $red: #cc0000;
@@ -259,3 +260,16 @@ $modal-button-border: $orange;
 $modal-button-font: $darkGray;
 $modal-border: $orange;
 
+//Cart.module.scss
+$cart-upper-bar: $mistyWhite;
+
+//CartButton.module.scss
+$cartButton-bg: $orange;
+$cartButton-font: $white;
+
+//CartProduct.module.scss
+$cartProduct-miniature: $normalGray;
+$cartProduct-prices: $brightGreen;
+
+//CartTotals.module.scss
+$carttotals-price: $brightGreen;
