@@ -22,6 +22,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: true,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -29,7 +31,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 42,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-279618.jpeg',
@@ -39,6 +41,8 @@ const initialState = {
       availability: false,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -55,6 +59,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -70,6 +76,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -77,7 +85,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 38,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-932095.jpeg',
@@ -86,6 +94,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -101,6 +111,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -108,7 +120,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 35,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-1866149.jpeg',
@@ -117,6 +129,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -132,6 +146,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -139,7 +155,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 38,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-2258083.jpeg',
@@ -148,6 +164,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -163,13 +181,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-11',
       name: 'Aenean Ru Bristique 11',
       category: 'bed',
       price: 30,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-2762247.jpeg',
@@ -178,6 +198,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -194,6 +216,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -209,13 +233,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-14',
       name: 'Aenean Ru Bristique 14',
       category: 'bed',
       price: 30,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-6480198.jpeg',
@@ -224,13 +250,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-15',
       name: 'Aenean Ru Bristique 15',
       category: 'bed',
       price: 30,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-6510974.jpeg',
@@ -239,6 +267,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -255,6 +285,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -270,6 +302,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -286,6 +320,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-19',
@@ -293,7 +329,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 35,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-8989344.jpeg',
@@ -302,6 +338,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -317,6 +355,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -324,7 +364,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 38,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-10758469.jpeg',
@@ -333,6 +373,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'aenean-ru-bristique-22',
@@ -348,6 +390,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-23',
@@ -363,6 +407,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'aenean-ru-bristique-24',
@@ -379,13 +425,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'bristique-1',
       name: 'Bristique 1',
       category: 'chair',
       price: 30,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-96940.jpeg',
@@ -394,6 +442,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'bristique-2',
@@ -410,13 +460,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'bristique-3',
       name: 'Bristique 3',
       category: 'chair',
       price: 30,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-276534.jpeg',
@@ -426,6 +478,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: true,
     },
     {
       id: 'bristique-4',
@@ -440,6 +494,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'bristique-5',
@@ -447,7 +503,7 @@ const initialState = {
       category: 'chair',
       price: 30,
       oldPrice: 38,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-930390.jpeg',
@@ -455,6 +511,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'bristique-6',
@@ -469,6 +527,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'bristique-7',
@@ -476,7 +536,7 @@ const initialState = {
       category: 'chair',
       price: 30,
       oldPrice: 35,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-2179214.jpeg',
@@ -484,6 +544,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'bristique-8',
@@ -498,6 +560,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'bristique-9',
@@ -505,7 +569,7 @@ const initialState = {
       category: 'chair',
       price: 30,
       oldPrice: 38,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/bed/pexels-photo-2258083.jpeg',
@@ -513,13 +577,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'bristique-10',
       name: 'Bristique 10',
       category: 'chair',
       price: 30,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-2606612.jpeg',
@@ -527,6 +593,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'bristique-11',
@@ -541,6 +609,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'bristique-12',
@@ -548,7 +618,7 @@ const initialState = {
       category: 'chair',
       price: 30,
       oldPrice: 42,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-2747070.jpeg',
@@ -556,6 +626,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'bristique-13',
@@ -570,6 +642,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'bristique-14',
@@ -584,13 +658,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'bristique-15',
       name: 'Bristique 15',
       category: 'chair',
       price: 30,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/chair/pexels-photo-8082560.jpeg',
@@ -598,6 +674,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: true,
     },
     {
       id: 'bristique-16',
@@ -613,13 +691,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'sofa-1',
       name: 'Sofa 1',
       category: 'sofa',
       price: 30,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-269129.jpeg',
@@ -628,6 +708,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'sofa-2',
@@ -635,7 +717,7 @@ const initialState = {
       category: 'sofa',
       price: 30,
       oldPrice: 42,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-269218.jpeg',
@@ -644,6 +726,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'sofa-3',
@@ -660,13 +744,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'sofa-4',
       name: 'Sofa 4',
       category: 'sofa',
       price: 30,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-1362385.jpeg',
@@ -674,6 +760,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'sofa-5',
@@ -689,6 +777,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'sofa-6',
@@ -703,6 +793,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'sofa-7',
@@ -710,7 +802,7 @@ const initialState = {
       category: 'sofa',
       price: 30,
       oldPrice: 35,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-1643383.jpeg',
@@ -718,6 +810,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'sofa-8',
@@ -732,6 +826,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'sofa-9',
@@ -739,7 +835,7 @@ const initialState = {
       category: 'sofa',
       price: 30,
       oldPrice: 38,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/sofa/pexels-photo-1918291.jpeg',
@@ -747,13 +843,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'table-1',
       name: 'Table 1',
       category: 'table',
       price: 30,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/table/pexels-photo-631411.jpeg',
@@ -762,6 +860,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'table-2',
@@ -778,6 +878,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'table-3',
@@ -794,13 +896,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'table-4',
       name: 'table 4',
       category: 'table',
       price: 30,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/table/pexels-photo-1008692.jpeg',
@@ -808,6 +912,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'table-5',
@@ -823,13 +929,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'table-6',
       name: 'table 6',
       category: 'table',
       price: 30,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/table/pexels-photo-2092058.jpeg',
@@ -837,6 +945,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'table-7',
@@ -852,6 +962,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'table-8',
@@ -866,6 +978,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'table-9',
@@ -873,7 +987,7 @@ const initialState = {
       category: 'table',
       price: 30,
       oldPrice: 38,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/table/pexels-photo-3144581.jpeg',
@@ -881,6 +995,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'dining-1',
@@ -896,6 +1012,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'dining-2',
@@ -903,7 +1021,7 @@ const initialState = {
       category: 'dining',
       price: 30,
       oldPrice: 42,
-      stars: 2,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/dining/pexels-photo-299348.jpeg',
@@ -912,6 +1030,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: false,
+      topSeller: false,
     },
     {
       id: 'dining-3',
@@ -928,13 +1048,15 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: false,
     },
     {
       id: 'dining-4',
       name: 'Dining 4',
       category: 'dining',
       price: 30,
-      stars: 2,
+      stars: 4,
       promo: 'sale',
       newFurniture: true,
       image: '/images/products/dining/pexels-photo-1395967.jpeg',
@@ -942,6 +1064,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
     {
       id: 'dining-5',
@@ -957,6 +1081,8 @@ const initialState = {
       availability: true,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+      featured: true,
+      topSeller: true,
     },
   ],
 

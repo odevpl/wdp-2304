@@ -59,7 +59,7 @@ const ProductPage = () => {
 
   return (
     <div className={styles.root}>
-      <div className='container'>
+      <div className={`container ${styles.container}`}>
         <div className='row'>
           <div className={`col-md-5 ${styles.leftBox}`}>
             <div className={styles.image}>
@@ -68,7 +68,11 @@ const ProductPage = () => {
             <div className={`sliderBox ${styles.sliderBox}`}>
               <TinySlider settings={settings}>
                 {products.map(product => (
-                  <div key={product.id} style={{ position: 'relative' }}>
+                  <div
+                    className={styles.imageBox}
+                    key={product.id}
+                    style={{ position: 'relative' }}
+                  >
                     <img src={product.image} alt={product.category} />
                   </div>
                 ))}

@@ -2,6 +2,7 @@
 
 .root {
   display: flex;
+  margin-bottom: 40px;
 
   .panelBar {
     margin-bottom: 30px;
@@ -136,6 +137,7 @@
         padding: 15px 15px 0;
         position: absolute;
         max-width: 250px;
+        min-width: 225px;
         bottom: 20px;
         right: 0;
         display: flex;
@@ -194,6 +196,12 @@
     .sliderBox {
       height: 88px;
       padding: 8px 50px;
+
+      .imageBox {
+        width: 70px;
+        height: 70px;
+        margin: 0 3.5px;
+      }
     }
   }
 

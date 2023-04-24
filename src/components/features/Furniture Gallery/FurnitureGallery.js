@@ -15,18 +15,63 @@ import {
 import ProductRating from '../ProductRating/ProductRating';
 
 class FurnitureGallery extends React.Component {
+  state = {
+    selectedCategory: 'featured',
+    selectedImage: this.props.products[2],
+  };
+
+  handleCategoryChange(categoryId, products) {
+    this.setState({ selectedCategory: categoryId });
+    this.setState({ selectedImage: products[2] });
+  }
+
+  handleImageChange(product) {
+    this.setState({ selectedImage: product });
+  }
+
   render() {
     const { categories, products } = this.props;
+    const { selectedCategory, selectedImage } = this.state;
 
     // Ustawienia dla slidera
     const settings = {
-      container: '.sliderBox',
       items: 5,
-      lazyload: true,
-      nav: false,
       mouseDrag: true,
+      nav: false,
+      startIndex: 2,
       controlsText: '<>',
+      loop: false,
+      rewind: true,
     };
+
+    const categoryProducts = selectedCategory => {
+      let selectedProducts = products;
+
+      switch (selectedCategory) {
+        case 'topRated':
+          selectedProducts = selectedProducts.filter(product => product.stars >= 4);
+          break;
+        case 'featured':
+          selectedProducts = selectedProducts.filter(
+            product => product.featured === true
+          );
+          break;
+        case 'saleOff':
+          selectedProducts = selectedProducts.filter(product => product.oldPrice);
+          break;
+        case 'topSeller':
+          selectedProducts = selectedProducts.filter(
+            product => product.topSeller === true
+          );
+          break;
+        default:
+          break;
+      }
+
+      return selectedProducts;
+    };
+
+    const productsByCategory = categoryProducts(selectedCategory);
 
     return (
       <div className={styles.root}>
@@ -45,15 +90,20 @@ class FurnitureGallery extends React.Component {
                   <ul>
                     {categories.map(category => (
                       <li key={category.id}>
-                        <Button noHover className={styles.categoryButton}>
-                          <a>{category.name}</a>
-                        </Button>
+                        <a
+                          className={styles.categoryButton}
+                          onClick={() =>
+                            this.handleCategoryChange(category.id, productsByCategory)
+                          }
+                        >
+                          {category.name}
+                        </a>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className={styles.imageBox}>
-                  <img src={products[0].image} alt={products[0].category} />
+                  <img src={selectedImage.image} alt={selectedImage.category} />
                   <div className={styles.iconButtons}>
                     <Button noHover variant='outline' className={styles.iconButton}>
                       <FontAwesomeIcon icon={faHeart} />
@@ -73,21 +123,30 @@ class FurnitureGallery extends React.Component {
                     </Button>
                   </div>
                   <div className={styles.content}>
-                    <h5>{products[0].name}</h5>
                     <div className={styles.triangle}></div>
                     <div className={styles.triangle2}></div>
-                    <ProductRating />
+                    <ProductRating
+                      id={selectedImage.id}
+                      stars={selectedImage.stars}
+                      userStars={selectedImage.userStars}
+                      name={selectedImage.name}
+                      noPadding
+                    />
                   </div>
                   <div className={styles.cirkle}>
-                    {products[1].oldPrice && <div>$ {products[1].oldPrice}</div>}
-                    <div>$ {products[1].price}</div>
+                    {selectedImage.oldPrice && <div>$ {selectedImage.oldPrice}</div>}
+                    <div>$ {selectedImage.price}</div>
                   </div>
                 </div>
                 <div className={`sliderBox ${styles.sliderBox}`}>
                   <TinySlider settings={settings}>
-                    {products.map(product => (
-                      <div key={product.id} style={{ position: 'relative' }}>
-                        <img src={product.image} alt={product.category} />
+                    {productsByCategory.map(product => (
+                      <div className={styles.imageBox} key={product.id}>
+                        <img
+                          onClick={() => this.handleImageChange(product)}
+                          src={product.image}
+                          alt={product.category}
+                        />
                       </div>
                     ))}
                   </TinySlider>
@@ -101,9 +160,7 @@ class FurnitureGallery extends React.Component {
                   from <span className={styles.price}>$ {products[18].price}</span>
                 </div>
                 <div className={styles.name}>{products[18].name}</div>
-                <Button className={styles.button}>
-                  <a>shop now</a>
-                </Button>
+                <Button className={styles.button}>shop now</Button>
               </div>
             </div>
           </div>
@@ -132,6 +189,7 @@ FurnitureGallery.propTypes = {
       newFurniture: PropTypes.bool,
       image: PropTypes.string,
       oldPrice: PropTypes.number,
+      userStars: PropTypes.number,
     })
   ),
 };
