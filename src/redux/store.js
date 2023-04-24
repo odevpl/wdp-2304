@@ -10,6 +10,7 @@ import promotionsReducer from './promotionsRedux';
 import galleryCategoriesReducer from './galleryRedux';
 import feedbackReducer from './feedbackRedux';
 import blogReducer from './blogRedux';
+import promotedReducer from './promotedRedux';
 import logOnUserReducer from './logOnUserRedux';
 
 // define reducers
@@ -23,6 +24,7 @@ const reducers = {
   galleryCategories: galleryCategoriesReducer,
   feedbacks: feedbackReducer,
   blog: blogReducer,
+  promoted: promotedReducer,
   logOnUser: logOnUserReducer,
 };
 

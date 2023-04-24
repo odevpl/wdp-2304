@@ -1016,7 +1016,16 @@ const initialState = {
     },
   ],
 
+  promoted: {
+    image: '/images/HotDeals/firstDeal.jpg',
+    imageTitle: 'GUEST ROOM',
+    dealTitle: 'INDOOR',
+    dealTitleHighlited: 'FURNITURE',
+    dealDescription: 'SAVE UP TO 50% OF ALL FURNITURE',
+  },
+
   logOnUser: {},
+
 };
 
 export default initialState;
