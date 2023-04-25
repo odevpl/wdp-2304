@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import LoginModal from '../../features/LoginModal/LoginModal';
 import Button from '../../common/Button/Button';
 import { logOnUser } from '../../../redux/logOnUserRedux';
+import { Link } from 'react-router-dom';
 
 const TopBar = () => {
   const dispatch = useDispatch();
@@ -57,10 +58,10 @@ const TopBar = () => {
                 )}
               </li>
               <li>
-                <a href='/register'>
+                <Link to='/register'>
                   <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
                   <span className={styles.text}>Register</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <a href='#'>

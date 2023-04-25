@@ -127,7 +127,7 @@ const RegistrationPage = () => {
                 type='checkbox'
                 label={
                   <span>
-                    Akceptuję warunki <a href='/regulamin'> regulaminu *</a>
+                    Akceptuję warunki <Link to='/regulamin'>regulaminu *</Link>
                   </span>
                 }
                 checked={agreeToTerms}
