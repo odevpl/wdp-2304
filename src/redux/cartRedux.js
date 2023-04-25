@@ -1,6 +1,7 @@
 /* selectors */
 export const getAll = ({ cart }) => cart.products;
 export const getCount = ({ cart }) => cart.products.length;
+export const getAllProducts = state => state.products;
 
 /* action name creator */
 const reducerName = 'cart';

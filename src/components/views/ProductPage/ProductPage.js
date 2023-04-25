@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom/cjs/react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getProductByCategory, getProductById } from '../../../redux/productsRedux';
 import TinySlider from 'tiny-slider-react';
 import 'tiny-slider/dist/tiny-slider.css';
