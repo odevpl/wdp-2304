@@ -11,6 +11,7 @@ import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
 import Blog from './components/views/Blog/Blog';
+import Search from './components/views/Search/Search';
 import Cart from './components/views/Cart/Cart';
 import RegistrationPage from './components/views/RegistrationPage/RegistrationPage';
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path='/cart' element={<Cart />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/register' element={<RegistrationPage />} />
+          <Route path='/search' element={<Search />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>

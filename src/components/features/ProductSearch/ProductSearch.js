@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 import styles from './ProductSearch.module.scss';
 
@@ -21,9 +22,11 @@ const ProductSearch = () => (
     </div>
     <div className={styles.searchField}>
       <input placeholder='Search products...' type='text' />
-      <button>
-        <FontAwesomeIcon className={styles.icon} icon={faSearch} />
-      </button>
+      <Link to='/search'>
+        <button>
+          <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+        </button>
+      </Link>
     </div>
   </form>
 );

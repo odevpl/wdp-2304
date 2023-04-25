@@ -12,6 +12,10 @@
     align-items: center;
     position: relative;
 
+    li {
+      border-bottom: 0;
+    }
+
     &:hover {
       @extend %hover-animation;
       &::after {
