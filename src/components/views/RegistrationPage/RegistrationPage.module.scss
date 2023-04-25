@@ -1,0 +1,95 @@
+@import "../../../styles/settings.scss";
+
+.formHeader{
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 24px;
+margin-bottom: 50px;
+label{
+  padding-left: 20px;
+  font-weight: 600;
+}
+}
+
+.wrapper{
+  padding: 100px 250px;
+}
+
+
+.formBody{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  input {
+    margin-bottom: 20px;
+  }
+}
+.formInputs{
+  input{
+    width: 100%;
+  }
+}
+h5 {
+  margin-bottom: 20px !important;
+}
+
+#showPasswordSwitch .form-switch input {
+  margin-left: 50px;
+}
+
+.checkboxes {
+  .checkbox {
+    margin-top: 30px;
+  }
+  label{
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  a{
+    display: inline;
+    color: $links-text;
+  }
+}
+
+input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid $checkboxes-border;
+  border-radius: 4px;
+  width: 1.5em;
+  height: 1.5em;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type=checkbox]:checked::before {
+  content: "\2714";
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  line-height: 1.2;
+  text-align: center;
+  background-color: $checkboxes-background;
+  color: $checkboxes-background;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.selectAll{
+font-weight: 700;
+}
+
+.formFooter{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a:first-of-type {
+    color: $links-text;
+  }
+}
