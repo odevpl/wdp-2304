@@ -81,11 +81,7 @@ const ProductBox = props => {
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button
-            variant='outline'
-            className={favorite && styles.active}
-            onClick={handleFavorite}
-          >
+          <Button variant='outline' className={favorite && styles.active} onClick={handleFavorite}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button

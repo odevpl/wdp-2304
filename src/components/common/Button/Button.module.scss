@@ -54,3 +54,21 @@
   align-items: center;
   justify-content: center;
 }
+.light {
+  border-radius: 5px;
+  background-color: $button-text;
+  color: $button-icon-color;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 22px;
+
+  &:not(.noHover):hover {
+    color: $button-text-hover !important;
+    background-color: $button-main-bg-hover;
+    text-decoration: none;
+    @extend %hover-animation;
+  }
+}
