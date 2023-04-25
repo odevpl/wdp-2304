@@ -30,7 +30,7 @@ export default function reducer(statePart = [], action = {}) {
     case ADD_USER_STARS:
       return statePart.map(product =>
         product.id === action.payload.id
-          ? { ...product, myStars: action.payload.clickedStars }
+          ? { ...product, userStars: action.payload.userStars }
           : product
       );
     case TOGGLE_FAVORITE:

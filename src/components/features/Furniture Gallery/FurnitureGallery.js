@@ -128,8 +128,8 @@ class FurnitureGallery extends React.Component {
                     <ProductRating
                       id={selectedImage.id}
                       stars={selectedImage.stars}
-                      userStars={selectedImage.userStars}
                       name={selectedImage.name}
+                      gallery={true}
                       noPadding
                     />
                   </div>
