@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import FeedbackData from '../FeedbackData/FeedbackData';
@@ -6,7 +6,8 @@ import styles from './ClientFeedback.module.scss';
 import { getAll } from '../../../redux/feedbackRedux';
 
 const ClientFeedback = () => {
-  const data = useSelector(getAll);
+  const [currentFeedbackIndex, setCurrentFeedbackIndex] = useState(0);
+  const feedbacks = useSelector(getAll);
 
   return (
     <div className={styles.root}>
@@ -19,21 +20,20 @@ const ClientFeedback = () => {
 
             <div className={'col-auto ' + styles.dots}>
               <ul>
-                <li>
-                  <a className={styles.active}>.</a>
-                </li>
-                <li>
-                  <a>.</a>
-                </li>
-                <li>
-                  <a>.</a>
-                </li>
+                {feedbacks.map((feedback, index) => (
+                  <li key={feedback.id}>
+                    <a
+                      className={currentFeedbackIndex === index ? styles.active : ''}
+                      onClick={() => setCurrentFeedbackIndex(index)}
+                    >
+                      .
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
-          {data.map(feedback => (
-            <FeedbackData key={feedback.id} {...feedback} />
-          ))}
+          <FeedbackData feedback={feedbacks[currentFeedbackIndex]} />
         </div>
       </div>
     </div>

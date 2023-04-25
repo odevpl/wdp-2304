@@ -973,8 +973,24 @@ const initialState = {
       name: 'Barry White',
       nickName: 'Funnbue Client',
       content:
-        'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
+        'Curabitur vitae nunc congue, dignissim tellus a, consectetur est. Nulla molestie tempor magna',
       image: '/images/feedback/barryWhite.jpg',
+    },
+    {
+      id: '2',
+      name: 'Michael Jordan',
+      nickName: 'Valuabe Client',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate dignissim porta. Phasellus eget augue at magna fringilla feugiat.',
+      image: '/images/feedback/MichaelJordan.jpg',
+    },
+    {
+      id: '3',
+      name: 'Robert Lewandowski',
+      nickName: 'Real Star',
+      content:
+        'Aliquam id mi non enim gravida iaculis. Cras et cursus dui. Donec in suscipit augue, vitae bibendum urna.',
+      image: '/images/feedback/RoberL.jpg',
     },
   ],
 
@@ -1025,7 +1041,6 @@ const initialState = {
   },
 
   logOnUser: {},
-
 };
 
 export default initialState;
