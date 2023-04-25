@@ -5,7 +5,7 @@ import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
 import MenuDropdown from '../../common/MenuDropdown/MenuDropdown';
-import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
