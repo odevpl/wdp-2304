@@ -4,6 +4,16 @@
   display: flex;
   margin-bottom: 40px;
 
+  .fadeOut {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+
+  .fadeIn {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
+
   .panelBar {
     margin-bottom: 30px;
     position: relative;
@@ -60,6 +70,7 @@
           border-bottom: solid 1px $furnitureGallery-boxBorder;
           justify-content: center;
           align-items: center;
+          cursor: pointer;
 
           &:hover {
             border-bottom: none;
@@ -67,6 +78,15 @@
             border-top: 2px solid $furnitureGallery-button-category-border-hover;
             @extend %hover-animation;
           }
+        }
+      }
+      .activeCategory {
+        border-bottom: none;
+        background-color: $furnitureGallery-button-category-hover;
+        border-top: 2px solid $furnitureGallery-button-category-border-hover;
+        .button {
+          color: $furnitureGallery-button-category-border-hover;
+          background-color: $furnitureGallery-button-category-hover;
         }
       }
     }
@@ -88,6 +108,7 @@
         top: 50%;
         left: 2%;
         transform: translateY(-50%);
+        cursor: pointer;
 
         .iconButton {
           margin-bottom: 6px;
@@ -201,6 +222,11 @@
         width: 70px;
         height: 70px;
         margin: 0 3.5px;
+        cursor: pointer;
+
+        img {
+          opacity: 0.5;
+        }
       }
     }
   }

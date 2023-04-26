@@ -17,24 +17,39 @@ import ProductRating from '../ProductRating/ProductRating';
 class FurnitureGallery extends React.Component {
   state = {
     selectedCategory: 'featured',
-    selectedImage: this.props.products[2],
+    selectedImage: this.props.products[0],
+    fadeCategory: false,
+    fadeImage: false,
   };
 
-  handleCategoryChange(categoryId, products) {
-    this.setState({ selectedCategory: categoryId });
-    this.setState({ selectedImage: products[2] });
+  handleCategoryChange(categoryId, selectedCategory) {
+    this.setState({ fadeCategory: true });
+    setTimeout(() => {
+      this.setState({ selectedCategory: categoryId });
+      this.setState({ selectedImage: selectedCategory[0] });
+      setTimeout(() => {
+        this.setState({ fadeCategory: false });
+      }, 0);
+    }, 500);
   }
 
   handleImageChange(product) {
-    this.setState({ selectedImage: product });
+    this.setState({ fadeImage: true });
+    setTimeout(() => {
+      this.setState({ selectedImage: product });
+      setTimeout(() => {
+        this.setState({ fadeImage: false });
+      }, 0);
+    }, 500);
   }
 
   render() {
     const { categories, products } = this.props;
-    const { selectedCategory, selectedImage } = this.state;
+    const { selectedCategory, selectedImage, fadeImage, fadeCategory } = this.state;
 
     // Ustawienia dla slidera
     const settings = {
+      container: '.sliderBox',
       items: 5,
       mouseDrag: true,
       nav: false,
@@ -89,67 +104,81 @@ class FurnitureGallery extends React.Component {
                 <div className={'col ' + styles.menu}>
                   <ul>
                     {categories.map(category => (
-                      <li key={category.id}>
-                        <a
-                          className={styles.categoryButton}
-                          onClick={() =>
-                            this.handleCategoryChange(category.id, productsByCategory)
-                          }
-                        >
-                          {category.name}
-                        </a>
+                      <li
+                        key={category.id}
+                        className={`${
+                          category.id === selectedCategory ? styles.activeCategory : ''
+                        }`}
+                        onClick={() =>
+                          this.handleCategoryChange(category.id, productsByCategory)
+                        }
+                      >
+                        {category.name}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className={styles.imageBox}>
-                  <img src={selectedImage.image} alt={selectedImage.category} />
-                  <div className={styles.iconButtons}>
-                    <Button noHover variant='outline' className={styles.iconButton}>
-                      <FontAwesomeIcon icon={faHeart} />
-                      <div className={styles.iconCloud}>Add To Favorite</div>
-                    </Button>
-                    <Button noHover variant='outline' className={styles.iconButton}>
-                      <FontAwesomeIcon icon={faExchangeAlt} />
-                      <div className={styles.iconCloud}>Compare</div>
-                    </Button>
-                    <Button noHover variant='outline' className={styles.iconButton}>
-                      <FontAwesomeIcon icon={faEye} />
-                      <div className={styles.iconCloud}>Add To Watch</div>
-                    </Button>
-                    <Button noHover variant='outline' className={styles.iconButton}>
-                      <FontAwesomeIcon icon={faShoppingBasket} />
-                      <div className={styles.iconCloud}>Add To Cart</div>
-                    </Button>
-                  </div>
-                  <div className={styles.content}>
-                    <div className={styles.triangle}></div>
-                    <div className={styles.triangle2}></div>
-                    <ProductRating
-                      id={selectedImage.id}
-                      stars={selectedImage.stars}
-                      name={selectedImage.name}
-                      gallery={true}
-                      noPadding
+
+                <div className={`${fadeCategory ? styles.fadeOut : styles.fadeIn}`}>
+                  <div className={styles.imageBox}>
+                    <img
+                      className={`${fadeImage ? styles.fadeOut : styles.fadeIn}`}
+                      src={selectedImage.image}
+                      alt={selectedImage.category}
                     />
+                    <div className={styles.iconButtons}>
+                      <Button noHover variant='outline' className={styles.iconButton}>
+                        <FontAwesomeIcon icon={faHeart} />
+                        <div className={styles.iconCloud}>Add To Favorite</div>
+                      </Button>
+                      <Button noHover variant='outline' className={styles.iconButton}>
+                        <FontAwesomeIcon icon={faExchangeAlt} />
+                        <div className={styles.iconCloud}>Compare</div>
+                      </Button>
+                      <Button noHover variant='outline' className={styles.iconButton}>
+                        <FontAwesomeIcon icon={faEye} />
+                        <div className={styles.iconCloud}>Add To Watch</div>
+                      </Button>
+                      <Button noHover variant='outline' className={styles.iconButton}>
+                        <FontAwesomeIcon icon={faShoppingBasket} />
+                        <div className={styles.iconCloud}>Add To Cart</div>
+                      </Button>
+                    </div>
+                    <div className={styles.content}>
+                      <div className={styles.triangle}></div>
+                      <div className={styles.triangle2}></div>
+                      <ProductRating
+                        id={selectedImage.id}
+                        stars={selectedImage.stars}
+                        name={selectedImage.name}
+                        gallery={true}
+                        noPadding
+                      />
+                    </div>
+                    <div className={styles.cirkle}>
+                      {selectedImage.oldPrice && <div>$ {selectedImage.oldPrice}</div>}
+                      <div>$ {selectedImage.price}</div>
+                    </div>
                   </div>
-                  <div className={styles.cirkle}>
-                    {selectedImage.oldPrice && <div>$ {selectedImage.oldPrice}</div>}
-                    <div>$ {selectedImage.price}</div>
+                  <div className={`sliderBox ${styles.sliderBox}`}>
+                    <TinySlider settings={settings}>
+                      {productsByCategory.map((product, index) => (
+                        <div className={styles.imageBox} key={product.id}>
+                          <img
+                            className={`${
+                              (index === 0 && !selectedImage) ||
+                              product === selectedImage
+                                ? 'activeSlide'
+                                : ''
+                            }`}
+                            onClick={() => this.handleImageChange(product)}
+                            src={product.image}
+                            alt={product.category}
+                          />
+                        </div>
+                      ))}
+                    </TinySlider>
                   </div>
-                </div>
-                <div className={`sliderBox ${styles.sliderBox}`}>
-                  <TinySlider settings={settings}>
-                    {productsByCategory.map(product => (
-                      <div className={styles.imageBox} key={product.id}>
-                        <img
-                          onClick={() => this.handleImageChange(product)}
-                          src={product.image}
-                          alt={product.category}
-                        />
-                      </div>
-                    ))}
-                  </TinySlider>
                 </div>
               </div>
             </div>

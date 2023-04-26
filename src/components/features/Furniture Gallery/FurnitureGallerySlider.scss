@@ -41,6 +41,19 @@
         width: 100%;
         object-fit: cover;
       }
+      .activeSlide {
+        opacity: 1;
+        animation: fadeIn 2s forwards;
+      }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

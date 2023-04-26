@@ -39,7 +39,7 @@ const ProductPage = () => {
   const products = useSelector(state => getProductByCategory(state, category));
 
   const settings = {
-    container: '.sliderBox',
+    container: '.productPageSliderBox',
     items: 5,
     lazyload: true,
     nav: false,
@@ -65,7 +65,7 @@ const ProductPage = () => {
             <div className={styles.image}>
               <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
             </div>
-            <div className={`sliderBox ${styles.sliderBox}`}>
+            <div className={`productPageSliderBox ${styles.sliderBox}`}>
               <TinySlider settings={settings}>
                 {products.map(product => (
                   <div
