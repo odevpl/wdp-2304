@@ -11,17 +11,17 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { getPromoted } from '../../../redux/promotedRedux';
 import Button from '../../common/Button/Button';
+import { Swipeable } from '../Swipeable/Swipeable';
 
 const Promoted = () => {
   const products = useSelector(getAll);
-
   const Promoted = useSelector(getPromoted);
 
   const product = products.find(product => product.id === 'aenean-ru-bristique-5'); // na razie jeden konkretny produkt bo task dotyczył tylko wyglądu
   return (
     <div className={`container ${styles.root}`}>
       <div className='row'>
-        <div className={`col-4   ${styles.card}`}>
+        <div className={`col-6 col-lg-4 d-none d-md-block ${styles.card}`}>
           <div className={styles.imageContainer}>
             <img src={product.image} alt={product.name}></img>
             <ProductBoxDescription
@@ -62,7 +62,7 @@ const Promoted = () => {
             </div>
           </div>
         </div>
-        <div className='col-8'>
+        <div className='col-md-6 col-lg-8 col-12'>
           <div className={styles.slider}>
             <img src={Promoted.image} alt={Promoted.imageTitle}></img>
             <div className={styles.sliderContainer}>
@@ -70,7 +70,7 @@ const Promoted = () => {
                 {Promoted.dealTitle} <span>{Promoted.dealTitleHighlited}</span>
               </h4>
               <p className={styles.description}>{Promoted.dealDescription}</p>
-              <Button variant='light' className={styles.btnShoping}>
+              <Button variant='light' className={styles.btnShopNow}>
                 SHOP NOW
               </Button>
             </div>

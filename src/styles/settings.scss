@@ -244,22 +244,22 @@ $pop-up-description: $darkGray;
 //Blog.module.scss
 $blog-icons-hoover: $orange;
 $blog-borders-color: $lightGray;
-//Promoted.module.scss
-$topbar-background: $lightBlack;
-$topbar-text: $white;
-$topbar-dot-background: $white;
-$topbar-dot-background-hover: $orange;
-$dotText-background: $lightBlack;
-$dotText-text: $white;
-$sliderContainer-text: $white;
 
+//Promoted.module.scss
+$promoted-topbar-background: $lightBlack;
+$promoted-topbar-text: $white;
+$promoted-topbar-dot-background: $white;
+$promoted-topbar-dot-background-hover: $orange;
+$promoted-dotText-background: $lightBlack;
+$promoted-dotText-text: $white;
+$promoted-sliderContainer-text: $white;
+$promoted-slider-overlay-background: $darkGrayTransparent;
 
 //LoginModal.module.scss
 $modal-button-bg: $orange;
 $modal-button-border: $orange;
 $modal-button-font: $darkGray;
 $modal-border: $orange;
-
 
 //Search.module.scss
 $search-padding: $base-padding;
@@ -278,10 +278,7 @@ $cartProduct-prices: $brightGreen;
 //CartTotals.module.scss
 $carttotals-price: $brightGreen;
 
-
 //RegistrationPage.scss
 $links-text: $orange;
 $checkboxes-border: $lightBlack;
 $checkboxes-background: $white;
-
-

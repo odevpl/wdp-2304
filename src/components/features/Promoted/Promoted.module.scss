@@ -20,7 +20,7 @@
   position: absolute;
   width: 100%;
   height: 10%;
-  background-color: $topbar-background;
+  background-color: $promoted-topbar-background;
   margin: 0 auto;
   top: 0;
   bottom: 0;
@@ -31,10 +31,12 @@
   justify-content: space-between;
   align-items: center;
 }
-.promoted{
-color: $topbar-text;
-padding-left: 20px;
+
+.promoted {
+  color: $promoted-topbar-text;
+  padding-left: 20px;
 }
+
 .dotsContainer {
   display: flex;
   align-items: center;
@@ -45,12 +47,12 @@ padding-left: 20px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: $topbar-dot-background;
+    background-color: $promoted-topbar-dot-background;
     margin-left: 5px;
     cursor: pointer;
 
     &:hover {
-      background-color: $topbar-dot-background-hover;
+      background-color: $promoted-topbar-dot-background-hover;
     }
   }
 }
@@ -62,7 +64,6 @@ padding-left: 20px;
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-
 }
 
 .card:hover .addToCartContainer {
@@ -70,7 +71,6 @@ padding-left: 20px;
 }
 
 .btnPrimary {
-
   width: fit-content;
   margin:auto;
   margin-bottom:25px;
@@ -86,72 +86,98 @@ padding-left: 20px;
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: $dotText-background;
+  background-color: $promoted-dotText-background;
   margin: 0 5px;
-  color: $dotText-text;
+  color: $promoted-dotText-text;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 19px;
   flex-direction: column;
-
 }
 
-.slider img{
+.slider img {
   width: 100%;
   height: 364px;
   object-fit: cover;
   object-position: center;
 }
+
 .slider::before {
   content: "";
   position: absolute;
-  width: 750px;
+  max-width: 750px;
   height: 50%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: $promoted-slider-overlay-background;
   margin: 0 auto;
   top: 20%;
   bottom: 0;
   left: 0;
   right: 0;
-
 }
-.sliderContainer{
+
+.sliderContainer {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: $sliderContainer-text;
+  color: $promoted-sliderContainer-text;
+
   h4 {
     font-size: 40px;
     font-weight: 400;
     margin: 0;
+
     span {
       font-weight: 700;
-
     }
   }
-    p{
-      font-weight: 100;
-      text-align: center;
-    }
 
+  p {
+    font-weight: 100;
+    text-align: center;
+  }
 }
 
-.btnShoping
-{
+.btnShopNow {
   position: relative;
   transform: translateX(100%);
-  top: 44px;
+  right: -3%;
+  top: 20px;
 }
 
-.buttonContainer
-{
+.buttonContainer {
   display: flex;
 }
+
 .btnSecondary {
   flex-grow: 1;
   text-align: center;
 }
 
+@media screen and (max-width: 1199px) {
+  .btnShopNow {
+    right: 10%;
+    top: 30px;
+  }
+}
 
+@media screen and (max-width: 992px) {
+  .btnShopNow {
+    right: 30%;
+    top: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btnShopNow {
+    right: 15%;
+    top: 30px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .btnShopNow {
+    right: 20%;
+  }
+}
