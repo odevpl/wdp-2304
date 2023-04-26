@@ -1,0 +1,62 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .cart {
+    flex: 1;
+    border-top: 1px solid lighten($cart-upper-bar, 10%);
+    border-right: 1px solid lighten($cart-upper-bar, 10%);
+    border-bottom: 1px solid lighten($cart-upper-bar, 10%);
+
+    padding: 0;
+  }
+
+  .subtotal,
+  .total {
+    display: flex;
+
+    align-items: center;
+    border-bottom: 1px solid lighten($cart-upper-bar, 10%);
+    margin: 0 30px;
+    font-size: 14px;
+  }
+
+  .total {
+    margin-bottom: 15px;
+  }
+
+  .title {
+    text-align: center;
+    background-color: lighten($cart-upper-bar, 12%);
+    padding: 5px 0;
+    font-weight: 500;
+  }
+
+  .name {
+    flex: 1;
+    padding: 10px 0;
+    font-weight: 500;
+    border-right: 1px solid lighten($cart-upper-bar, 10%);
+  }
+
+  .price {
+    color: $carttotals-price;
+  }
+
+  .button {
+    padding: 0 30px;
+    margin-bottom: 15px;
+  }
+
+  .buttonShape {
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 5px 15px;
+    background-color: $cartButton-bg;
+    border: 1px solid $cartButton-bg;
+    color: $cartButton-font;
+    width: 100%;
+  }
+}

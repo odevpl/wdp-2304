@@ -1,0 +1,68 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+}
+
+.blogBox img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.blogBox p {
+  margin-top: 25px;
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    padding-right: 15px;
+  }
+}
+
+.iconsContainer{
+  text-align:center;
+  padding: 10px;
+  border-top: solid $blog-borders-color 1px;
+  border-bottom: solid $blog-borders-color 1px;
+
+
+  .icons {
+    cursor: pointer;
+    &:hover {
+      color: $blog-icons-hoover
+    }
+  }
+}
+
+.inputContainer input {
+  border: 0;
+}
+
+.postList {
+  list-style: none;
+  padding: 0;
+  li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-bottom: solid $blog-borders-color 1px;
+    &:hover{
+      color: $blog-icons-hoover
+    }
+  }
+}
+
+.recentPostsTitle {
+  padding: 25px 0 25px 0
+}
+
+.archives {
+  margin-bottom: 25px;
+}
+
+
+

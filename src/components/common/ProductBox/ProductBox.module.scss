@@ -1,0 +1,110 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  background-color: $product-box-bg;
+  border: 1px solid $product-box-border;
+  margin-bottom: 2rem;
+
+  &:hover .photo .buttons {
+    display: flex;
+    @extend %hover-animation;
+  }
+
+  .photo {
+    position: relative;
+    padding: 10px 10px 0 10px;
+    background: {
+      color: $product-box-photo-bg;
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    overflow: hidden;
+    align-items: flex-end;
+
+
+    .oldPrice {
+      padding-top: 10px;
+      position: absolute;
+      top: 20px;
+      left: 20%;
+      transform: translateX(-50%);
+      background-color: $product-box-old-price;
+      border-radius: 50%;
+      color: $product-box-old-price-text;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      font-size: 13px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 32px;
+        height: 1px;
+        left: 8%;
+        background: $product-box-old-price-text-after;
+        top: 50%;
+        transform: rotate(20deg);
+      }
+    }
+
+    .buttons {
+      display: none;
+      justify-content: space-between;
+    }
+  }
+  .content {
+    text-align: center;
+    padding: 20px;
+
+    h5 {
+      color: $product-box-text;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      a {
+        text-decoration: none;
+        color: $product-box-text;
+      }
+    }
+  }
+
+  .line {
+    margin: 0 10px;
+    border-bottom: 1px solid $product-box-line;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 30px;
+      border-bottom: 4px solid $product-box-border-bottom;
+      transform: translateX(-50%);
+    }
+  }
+
+  .actions {
+    padding: 15px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .outlines {
+    .active {
+      background-color: $product-box-icon-bg-active;
+      color: $product-box-icon-color-active;
+    }
+  }
+}

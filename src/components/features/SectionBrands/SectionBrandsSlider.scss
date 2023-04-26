@@ -1,0 +1,47 @@
+@import "../../../styles/settings.scss";
+
+.cardContent {
+  position: relative;
+
+  .tns-controls {
+
+
+    button {
+      width: 33px;
+      background-color: $slider-button-background;
+      color: $slider-button-text;
+      &.active,
+      &:hover {
+        color: $slider-button-hover-text;
+       background-color: $slider-button-hover-background;
+       @extend %hover-animation;
+      }
+    }
+
+
+    button:nth-of-type(1) {
+      position: absolute;
+      left: 10px;
+      bottom: 55px;
+    }
+
+    button:nth-of-type(2) {
+      position: absolute;
+      right: 10px;
+      bottom: 55px;
+    }
+
+  }
+  .tns-ovh .tns-inner .tns-slider {
+    .tns-item {
+      height: 120px;
+      width: 140px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

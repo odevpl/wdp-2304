@@ -1,0 +1,59 @@
+@import "../../../styles/settings.scss";
+
+.sliderBox {
+  position: relative;
+
+  .tns-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    button {
+      width: 33px;
+      height: 70px;
+      background-color: $furnitureGallerySlider-button-bg;
+      color: $furnitureGallerySlider-button-font;
+      &.active,
+      &:hover {
+        color: $furnitureGallerySlider-button-font-hover;
+        @extend %hover-animation;
+      }
+    }
+
+    button:nth-of-type(1) {
+      position: absolute;
+      left: 10px;
+      top: 8px;
+    }
+
+    button:nth-of-type(2) {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+    }
+  }
+  .tns-ovh .tns-inner .tns-slider {
+    .tns-item {
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .activeSlide {
+        opacity: 1;
+        animation: fadeIn 2s forwards;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

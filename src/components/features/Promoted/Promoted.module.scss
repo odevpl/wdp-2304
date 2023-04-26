@@ -1,0 +1,157 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 6rem 0;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.topBar {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background-color: $topbar-background;
+  margin: 0 auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translate(0%, 0%);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.promoted{
+color: $topbar-text;
+padding-left: 20px;
+}
+.dotsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $topbar-dot-background;
+    margin-left: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $topbar-dot-background-hover;
+    }
+  }
+}
+
+.addToCartContainer {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+}
+
+.card:hover .addToCartContainer {
+  opacity: 1;
+}
+
+.btnPrimary {
+
+  width: fit-content;
+  margin:auto;
+  margin-bottom:25px;
+}
+
+.dotsTextContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dotText {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: $dotText-background;
+  margin: 0 5px;
+  color: $dotText-text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  flex-direction: column;
+
+}
+
+.slider img{
+  width: 100%;
+  height: 364px;
+  object-fit: cover;
+  object-position: center;
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 750px;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  top: 20%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+.sliderContainer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $sliderContainer-text;
+  h4 {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 0;
+    span {
+      font-weight: 700;
+
+    }
+  }
+    p{
+      font-weight: 100;
+      text-align: center;
+    }
+
+}
+
+.btnShoping
+{
+  position: relative;
+  transform: translateX(100%);
+  top: 44px;
+}
+
+.buttonContainer
+{
+  display: flex;
+}
+.btnSecondary {
+  flex-grow: 1;
+  text-align: center;
+}
+
+

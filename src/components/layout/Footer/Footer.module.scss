@@ -1,0 +1,130 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .footerMenu {
+    background-color: $footer-bg;
+    padding: 3rem 0;
+
+    .menuWrapper {
+      h6 {
+        color: $footer-headlines-color;
+        text-transform: uppercase;
+        margin: 0 0 1rem 0;
+      }
+
+      ul {
+        margin: 0 0 1.5rem 0;
+        padding: 0;
+        list-style: none;
+        li {
+          a {
+            font-size: 14px;
+            line-height: 30px;
+            color: $footer-links-color;
+
+            &:hover {
+              color: $footer-links-color-hover;
+              @extend %hover-animation;
+            }
+          }
+        }
+      }
+    }
+
+    .paymentMethods {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  .bottomBar {
+    background-color: $bottom-bar-bg;
+
+    :global(.container) > :global(.row) {
+      height: 95px;
+    }
+
+    .copyright {
+      p {
+        margin: 0;
+        color: $bottom-bar-text-color;
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+
+    .socialMedia {
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          display: inline-block;
+          margin-left: 1rem;
+
+          a {
+            color: $bottom-bar-icons-color;
+            text-decoration: none;
+
+            &:hover {
+              color: $bottom-bar-icons-color-hover;
+              @extend %hover-animation;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .root {
+    .footerMenu .colWrapper {
+      flex: 50%;
+    }
+
+    .bottomBar .emptyCol {
+      display: none;
+    }
+
+    .copyright {
+      text-align: left !important;
+    }
+  }
+}
+
+@media (max-width: 545px) {
+  .root .footerMenu .colWrapper img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 445px) {
+  .root {
+    .footerMenu {
+      .colWrapper {
+        flex: auto;
+        text-align: center;
+      }
+    }
+
+    .bottomBar .bottomRow {
+      flex-direction: column;
+
+      .copyright,
+      .socialMedia {
+        text-align: center !important;
+      }
+
+      .copyright {
+        margin-top: 15px;
+      }
+    }
+  }
+}

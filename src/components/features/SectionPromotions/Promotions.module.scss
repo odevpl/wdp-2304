@@ -1,0 +1,121 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 0 0 2rem 0;
+}
+
+.imageBox img {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageBox {
+  position: relative;
+}
+
+.imageBox::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translate(0%, 5%);
+}
+
+.imageBoxContent {
+  position: absolute;
+  color: $boxes-text-color;
+  top: 45%;
+  left: 10%;
+  h5 {
+    margin-bottom: 0;
+    font-size: 26px;
+    font-weight: 600;
+  }
+  h1 {
+    font-weight: 700;
+  }
+}
+
+.discountBox {
+  border: 3px solid $price-border-color;
+  padding: 5px 10px 5px 10px;
+  display: inline-block;
+}
+
+.secondImage img {
+  width: 100%;
+  height: 182.5px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.secondBox {
+  margin-bottom: 5px;
+}
+
+.secondImageContent {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  color: $boxes-text-color;
+  h3 {
+    font-weight: 400;
+    margin: 0;
+    span {
+      font-weight: 700;
+      color: $second-box-title-color;
+    }
+  }
+  h6{
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: $second-box-price-color;
+    font-weight: 700;
+  }
+}
+
+.thirdImageContent {
+  position: absolute;
+  top: 60%;
+  left: 55%;
+  color: $boxes-text-color;
+  h2 {
+    font-weight: 400;
+    span {
+      font-weight: 700;
+      color: $third-box-title-color;
+    }
+  }
+
+  h6 {
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 991px) {
+  .thirdImageContent {
+    left: 40%
+  }
+}
+
+@media (max-width: 767px) {
+  .imageBox {
+    padding-bottom: 20px;
+    &:before {
+      height: 87%;
+    }
+  }
+
+  .thirdImageContent {
+    left: 30%
+  }
+}
