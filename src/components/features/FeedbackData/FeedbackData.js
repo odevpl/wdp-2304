@@ -5,12 +5,12 @@ import { getAllFeedbacks } from '../../../redux/feedbackRedux';
 import Swipeable from '../Swipeable/Swipeable';
 import { useSelector } from 'react-redux';
 
-const FeedbackData = () => {
-  const [currentFeedbackIndex, setCurrentFeedbackIndex] = useState(0);
+const FeedbackData = ({ index }) => {
+  const [currentFeedbackIndex, setCurrentFeedbackIndex] = useState(index);
   const feedbacks = useSelector(state => getAllFeedbacks(state));
 
   const handleClickRight = () => {
-    const nextFeedbackIndex = currentFeedbackIndex + 1;
+    const nextFeedbackIndex = index + 1;
     if (nextFeedbackIndex < feedbacks.length) {
       setCurrentFeedbackIndex(nextFeedbackIndex);
     } else {
@@ -19,13 +19,13 @@ const FeedbackData = () => {
   };
 
   const handleClickLeft = () => {
-    const previousFeedbackIndex = currentFeedbackIndex - 1;
+    const previousFeedbackIndex = index - 1;
     if (previousFeedbackIndex >= 0) {
       setCurrentFeedbackIndex(previousFeedbackIndex);
     }
   };
 
-  const currentFeedback = feedbacks[currentFeedbackIndex];
+  const currentFeedback = feedbacks[index];
 
   return (
     <div className={styles.feedbackData}>
@@ -64,6 +64,7 @@ FeedbackData.propTypes = {
   image: PropTypes.string,
   handleSwipeLeft: PropTypes.func,
   handleSwipeRight: PropTypes.func,
+  index: PropTypes.number,
 };
 
 export default FeedbackData;
