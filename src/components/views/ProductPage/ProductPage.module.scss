@@ -21,94 +21,201 @@
 .root {
   padding: $base-padding 0;
 
-  .leftBox {
-    .image {
-      height: 550px;
+  .container {
+    margin-bottom: 40px;
+    .leftBox {
+      .image {
+        height: 550px;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .sliderBox {
+        padding: 10px 20px;
+
+        .imageBox {
+          width: 90px !important;
+          height: 90px;
+          margin: 0 3.5px;
+        }
       }
     }
 
-    .sliderBox {
-      padding: 10px 20px;
-    }
-  }
+    .rightBox {
+      .firstRow {
+        padding: 10px 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $ProductPage-line;
 
-  .rightBox {
-    .firstRow {
-      padding: 10px 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid $ProductPage-line;
+        .leftSide {
+          .stars {
+            display: flex;
+            font-size: 16px;
+            justify-content: space-around;
+            margin-top: 20px;
+            h5 {
+              display: none;
+            }
 
-      .leftSide {
-        .stars {
+            .reviewCount {
+              font-size: 14px;
+              color: $ProductPage-font-light;
+            }
+
+            .addReview {
+              font-size: 14px;
+              color: $ProductPage-font-light;
+            }
+          }
+        }
+
+        .rightSide {
           display: flex;
-          font-size: 16px;
-          justify-content: space-around;
-          margin-top: 20px;
-          h5 {
-            display: none;
-          }
+          align-items: center;
 
-          .reviewCount {
-            font-size: 14px;
-            color: $ProductPage-font-light;
-          }
-
-          .addReview {
-            font-size: 14px;
-            color: $ProductPage-font-light;
+          .button {
+            margin: 5px;
           }
         }
       }
 
-      .rightSide {
+      .secondRow {
         display: flex;
-        align-items: center;
+        font-size: 24px;
+        padding: 20px 10px;
+        border-bottom: 1px solid $ProductPage-line;
 
-        .button {
-          margin: 5px;
+        .oldPrice {
+          margin: 0 30px 0 10px;
+          color: $ProductPage-font-light;
+          text-decoration: line-through;
+        }
+        .price {
+          padding: 2px 7px;
+          background-color: $ProductPage-font-bg;
+          color: $ProductPage-font-white;
         }
       }
-    }
 
-    .secondRow {
-      display: flex;
-      font-size: 24px;
-      padding: 20px 10px;
-      border-bottom: 1px solid $ProductPage-line;
+      .thirdRow {
+        padding: 20px 10px;
+        border-bottom: 1px solid $ProductPage-line;
 
-      .oldPrice {
-        margin: 0 30px 0 10px;
-        color: $ProductPage-font-light;
-        text-decoration: line-through;
+        .firstColumn {
+          display: flex;
+          margin-bottom: 20px;
+
+          & > a {
+            margin: 0 5px;
+            width: 40px;
+            height: 40px;
+            border: 2px solid $button-slider-border;
+            text-align: center;
+            padding: 6px;
+            color: $button-slider-font;
+            &:active,
+            &:hover {
+              color: $ProductPage-font-button;
+              border: 2px solid $ProductPage-border-button;
+              background-color: $button-slider-bg-opacity;
+              @extend %hover-animation;
+            }
+          }
+
+          & > a:first-of-type {
+            width: 140px;
+            border: 2px solid $ProductPage-border-button;
+            background-color: $button-slider-bg;
+            color: $ProductPage-font-white;
+            & > svg {
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .form {
+          display: inline-block;
+
+          .formGroup {
+            margin: 0;
+
+            .inputGroup {
+              align-items: center;
+
+              .quantity {
+                margin: 0 20px 0 0;
+              }
+
+              .input {
+                width: 80px;
+                height: 40px;
+                border: 2px solid $button-slider-border;
+                margin: 0 5px;
+              }
+
+              .button {
+                width: 40px;
+                height: 40px;
+                margin: 0 5px;
+                text-align: center;
+                padding: unset;
+                &:active,
+                &:hover {
+                  color: $ProductPage-font-button;
+                  border: 2px solid $ProductPage-border-button;
+                  background-color: $button-slider-bg-opacity;
+                  @extend %hover-animation;
+                }
+              }
+            }
+          }
+        }
       }
-      .price {
-        padding: 2px 7px;
-        background-color: $ProductPage-font-bg;
-        color: $ProductPage-font-white;
+
+      .fourthRow {
+        padding: 20px 10px;
+        border-bottom: 1px solid $ProductPage-line;
+
+        & > h2 {
+          font-size: 20px;
+        }
+
+        & > p {
+          font-size: 14px;
+        }
       }
-    }
 
-    .thirdRow {
-      padding: 20px 10px;
-      border-bottom: 1px solid $ProductPage-line;
+      .fifthRow {
+        padding: 20px 10px;
+        border-bottom: 1px solid $ProductPage-line;
+        font-size: 14px;
 
-      .firstColumn {
+        .title {
+          font-weight: bold;
+        }
+
+        .subtitle {
+          margin-left: 10px;
+        }
+      }
+
+      .sixth {
         display: flex;
-        margin-bottom: 20px;
+        padding: 20px 10px;
+        font-size: 12px;
 
         & > a {
           margin: 0 5px;
-          width: 40px;
-          height: 40px;
+          width: 120px;
+          min-height: 40px;
           border: 2px solid $button-slider-border;
           text-align: center;
-          padding: 6px;
+          padding: 7px;
           color: $button-slider-font;
           &:active,
           &:hover {
@@ -117,133 +224,35 @@
             background-color: $button-slider-bg-opacity;
             @extend %hover-animation;
           }
+
+          & > svg {
+            margin-right: 10px;
+            font-size: 16px;
+          }
+
+          .google {
+            color: $Icon-google;
+          }
+
+          .twitter {
+            color: $Icon-twitter;
+          }
+
+          .pinterest {
+            color: $Icon-pinterest;
+          }
+
+          .linkedin {
+            color: $Icon-linkid;
+          }
         }
 
         & > a:first-of-type {
           width: 140px;
-          border: 2px solid $ProductPage-border-button;
-          background-color: $button-slider-bg;
+          border: 2px solid $Icon-facebook;
+          background-color: $Icon-facebook;
           color: $ProductPage-font-white;
-          & > svg {
-            margin-right: 10px;
-          }
         }
-      }
-
-      .form {
-        display: inline-block;
-
-        .formGroup {
-          margin: 0;
-
-          .inputGroup {
-            align-items: center;
-
-            .quantity {
-              margin: 0 20px 0 0;
-            }
-
-            .input {
-              width: 80px;
-              height: 40px;
-              border: 2px solid $button-slider-border;
-              margin: 0 5px;
-            }
-
-            .button {
-              width: 40px;
-              height: 40px;
-              margin: 0 5px;
-              text-align: center;
-              padding: unset;
-              &:active,
-              &:hover {
-                color: $ProductPage-font-button;
-                border: 2px solid $ProductPage-border-button;
-                background-color: $button-slider-bg-opacity;
-                @extend %hover-animation;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .fourthRow {
-      padding: 20px 10px;
-      border-bottom: 1px solid $ProductPage-line;
-
-      & > h2 {
-        font-size: 20px;
-      }
-
-      & > p {
-        font-size: 14px;
-      }
-    }
-
-    .fifthRow {
-      padding: 20px 10px;
-      border-bottom: 1px solid $ProductPage-line;
-      font-size: 14px;
-
-      .title {
-        font-weight: bold;
-      }
-
-      .subtitle {
-        margin-left: 10px;
-      }
-    }
-
-    .sixth {
-      display: flex;
-      padding: 20px 10px;
-      font-size: 12px;
-
-      & > a {
-        margin: 0 5px;
-        width: 120px;
-        min-height: 40px;
-        border: 2px solid $button-slider-border;
-        text-align: center;
-        padding: 7px;
-        color: $button-slider-font;
-        &:active,
-        &:hover {
-          color: $ProductPage-font-button;
-          border: 2px solid $ProductPage-border-button;
-          background-color: $button-slider-bg-opacity;
-          @extend %hover-animation;
-        }
-
-        & > svg {
-          margin-right: 10px;
-          font-size: 16px;
-        }
-
-        .google {
-          color: $Icon-google;
-        }
-
-        .twitter {
-          color: $Icon-twitter;
-        }
-
-        .pinterest {
-          color: $Icon-pinterest;
-        }
-
-        .linkedin {
-          color: $Icon-linkid;
-        }
-      }
-
-      & > a:first-of-type {
-        width: 140px;
-        border: 2px solid $Icon-facebook;
-        background-color: $Icon-facebook;
-        color: $ProductPage-font-white;
       }
     }
   }

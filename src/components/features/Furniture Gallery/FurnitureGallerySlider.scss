@@ -36,15 +36,24 @@
   }
   .tns-ovh .tns-inner .tns-slider {
     .tns-item {
-      width: 70px;
-      height: 70px;
-      margin: 0 3.5px;
-
       img {
         height: 100%;
         width: 100%;
         object-fit: cover;
       }
+      .activeSlide {
+        opacity: 1;
+        animation: fadeIn 2s forwards;
+      }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

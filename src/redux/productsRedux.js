@@ -6,7 +6,6 @@ export const getProductById = ({ products }, productId) =>
   products.find(product => `${product.category}-${product.id}` === productId);
 export const getProductByCategory = ({ products }, productCategory) =>
   products.filter(product => product.category === productCategory);
-
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
@@ -31,7 +30,7 @@ export default function reducer(statePart = [], action = {}) {
     case ADD_USER_STARS:
       return statePart.map(product =>
         product.id === action.payload.id
-          ? { ...product, myStars: action.payload.clickedStars }
+          ? { ...product, userStars: action.payload.userStars }
           : product
       );
     case TOGGLE_FAVORITE:

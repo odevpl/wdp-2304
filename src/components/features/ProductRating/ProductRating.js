@@ -2,28 +2,31 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductRating.module.scss';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUserStars } from '../../../redux/productsRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 const ProductRating = props => {
-  const [userStars, setUserStars] = useState(props.userStars ? props.userStars : 0);
+  const userStars = useSelector(state => {
+    const product = state.products.find(p => p.id === props.id);
+    return product ? product.userStars : 0;
+  });
+
   const [hoverStars, setHoverStars] = useState(undefined);
   const dispatch = useDispatch();
   const id = props.id;
 
   const handleClick = (e, starsClicked) => {
     e.preventDefault();
-    if (userStars === 0) {
-      setUserStars(starsClicked);
-      dispatch(addUserStars({ id, starsClicked }));
+    if (userStars !== starsClicked) {
+      dispatch(addUserStars({ id, userStars: starsClicked }));
     }
   };
 
   const handleMouseOver = i => {
-    if (userStars === 0) setHoverStars(i);
+    if (userStars !== 0) setHoverStars(i);
   };
 
   const handleMouseOff = () => {
@@ -31,17 +34,17 @@ const ProductRating = props => {
   };
 
   const renderStarIcon = i => {
-    if (userStars !== 0) return userStars < i ? farStar : faStar;
-    else if (hoverStars) return hoverStars < i ? farStar : faStar;
-    else return i <= props.stars ? faStar : farStar;
+    if (userStars >= i) return faStar;
+    else if (hoverStars >= i) return faStar;
+    else if (props.stars >= i) return faStar;
+    else return farStar;
   };
 
   const accessStarStyles = i => {
-    if (userStars !== 0) return styles.hoverStars;
+    if (userStars >= i) return styles.hoverStars;
     else if (hoverStars) return hoverStars < i ? styles.stars : styles.hoverStars;
-    else return styles.stars;
+    else return '';
   };
-
   const classes = [];
 
   if (props.noPadding) {
@@ -60,7 +63,7 @@ const ProductRating = props => {
               icon={renderStarIcon(i)}
               onClick={e => handleClick(e, i)}
               onMouseOver={() => handleMouseOver(i)}
-              onMouseOff={handleMouseOff}
+              onMouseLeave={handleMouseOff}
             >
               {i} stars
             </FontAwesomeIcon>

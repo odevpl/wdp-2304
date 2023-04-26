@@ -15,18 +15,78 @@ import {
 import ProductRating from '../ProductRating/ProductRating';
 
 class FurnitureGallery extends React.Component {
+  state = {
+    selectedCategory: 'featured',
+    selectedImage: this.props.products[0],
+    fadeCategory: false,
+    fadeImage: false,
+  };
+
+  handleCategoryChange(categoryId, selectedCategory) {
+    this.setState({ fadeCategory: true });
+    setTimeout(() => {
+      this.setState({ selectedCategory: categoryId });
+      this.setState({ selectedImage: selectedCategory[0] });
+      setTimeout(() => {
+        this.setState({ fadeCategory: false });
+      }, 0);
+    }, 500);
+  }
+
+  handleImageChange(product) {
+    this.setState({ fadeImage: true });
+    setTimeout(() => {
+      this.setState({ selectedImage: product });
+      setTimeout(() => {
+        this.setState({ fadeImage: false });
+      }, 0);
+    }, 500);
+  }
+
   render() {
     const { categories, products } = this.props;
+    const { selectedCategory, selectedImage, fadeImage, fadeCategory } = this.state;
 
     // Ustawienia dla slidera
     const settings = {
       container: '.sliderBox',
       items: 5,
-      lazyload: true,
-      nav: false,
       mouseDrag: true,
+      nav: false,
+      startIndex: 2,
       controlsText: '<>',
+      loop: false,
+      rewind: true,
     };
+
+    const categoryProducts = selectedCategory => {
+      let selectedProducts = products;
+
+      switch (selectedCategory) {
+        case 'topRated':
+          selectedProducts = selectedProducts.filter(product => product.stars >= 4);
+          break;
+        case 'featured':
+          selectedProducts = selectedProducts.filter(
+            product => product.featured === true
+          );
+          break;
+        case 'saleOff':
+          selectedProducts = selectedProducts.filter(product => product.oldPrice);
+          break;
+        case 'topSeller':
+          selectedProducts = selectedProducts.filter(
+            product => product.topSeller === true
+          );
+          break;
+        default:
+          break;
+      }
+
+      return selectedProducts;
+    };
+
+    const productsByCategory = categoryProducts(selectedCategory);
 
     return (
       <div className={styles.root}>
@@ -44,53 +104,81 @@ class FurnitureGallery extends React.Component {
                 <div className={'col ' + styles.menu}>
                   <ul>
                     {categories.map(category => (
-                      <li key={category.id}>
-                        <Button noHover className={styles.categoryButton}>
-                          <a>{category.name}</a>
-                        </Button>
+                      <li
+                        key={category.id}
+                        className={`${
+                          category.id === selectedCategory ? styles.activeCategory : ''
+                        }`}
+                        onClick={() =>
+                          this.handleCategoryChange(category.id, productsByCategory)
+                        }
+                      >
+                        {category.name}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className={styles.imageBox}>
-                  <img src={products[0].image} alt={products[0].category} />
-                  <div className={styles.iconButtons}>
-                    <Button noHover variant='outline' className={styles.iconButton}>
-                      <FontAwesomeIcon icon={faHeart} />
-                      <div className={styles.iconCloud}>Add To Favorite</div>
-                    </Button>
-                    <Button noHover variant='outline' className={styles.iconButton}>
-                      <FontAwesomeIcon icon={faExchangeAlt} />
-                      <div className={styles.iconCloud}>Compare</div>
-                    </Button>
-                    <Button noHover variant='outline' className={styles.iconButton}>
-                      <FontAwesomeIcon icon={faEye} />
-                      <div className={styles.iconCloud}>Add To Watch</div>
-                    </Button>
-                    <Button noHover variant='outline' className={styles.iconButton}>
-                      <FontAwesomeIcon icon={faShoppingBasket} />
-                      <div className={styles.iconCloud}>Add To Cart</div>
-                    </Button>
+
+                <div className={`${fadeCategory ? styles.fadeOut : styles.fadeIn}`}>
+                  <div className={styles.imageBox}>
+                    <img
+                      className={`${fadeImage ? styles.fadeOut : styles.fadeIn}`}
+                      src={selectedImage.image}
+                      alt={selectedImage.category}
+                    />
+                    <div className={styles.iconButtons}>
+                      <Button noHover variant='outline' className={styles.iconButton}>
+                        <FontAwesomeIcon icon={faHeart} />
+                        <div className={styles.iconCloud}>Add To Favorite</div>
+                      </Button>
+                      <Button noHover variant='outline' className={styles.iconButton}>
+                        <FontAwesomeIcon icon={faExchangeAlt} />
+                        <div className={styles.iconCloud}>Compare</div>
+                      </Button>
+                      <Button noHover variant='outline' className={styles.iconButton}>
+                        <FontAwesomeIcon icon={faEye} />
+                        <div className={styles.iconCloud}>Add To Watch</div>
+                      </Button>
+                      <Button noHover variant='outline' className={styles.iconButton}>
+                        <FontAwesomeIcon icon={faShoppingBasket} />
+                        <div className={styles.iconCloud}>Add To Cart</div>
+                      </Button>
+                    </div>
+                    <div className={styles.content}>
+                      <div className={styles.triangle}></div>
+                      <div className={styles.triangle2}></div>
+                      <ProductRating
+                        id={selectedImage.id}
+                        stars={selectedImage.stars}
+                        name={selectedImage.name}
+                        gallery={true}
+                        noPadding
+                      />
+                    </div>
+                    <div className={styles.cirkle}>
+                      {selectedImage.oldPrice && <div>$ {selectedImage.oldPrice}</div>}
+                      <div>$ {selectedImage.price}</div>
+                    </div>
                   </div>
-                  <div className={styles.content}>
-                    <h5>{products[0].name}</h5>
-                    <div className={styles.triangle}></div>
-                    <div className={styles.triangle2}></div>
-                    <ProductRating />
+                  <div className={`sliderBox ${styles.sliderBox}`}>
+                    <TinySlider settings={settings}>
+                      {productsByCategory.map((product, index) => (
+                        <div className={styles.imageBox} key={product.id}>
+                          <img
+                            className={`${
+                              (index === 0 && !selectedImage) ||
+                              product === selectedImage
+                                ? 'activeSlide'
+                                : ''
+                            }`}
+                            onClick={() => this.handleImageChange(product)}
+                            src={product.image}
+                            alt={product.category}
+                          />
+                        </div>
+                      ))}
+                    </TinySlider>
                   </div>
-                  <div className={styles.cirkle}>
-                    {products[1].oldPrice && <div>$ {products[1].oldPrice}</div>}
-                    <div>$ {products[1].price}</div>
-                  </div>
-                </div>
-                <div className={`sliderBox ${styles.sliderBox}`}>
-                  <TinySlider settings={settings}>
-                    {products.map(product => (
-                      <div key={product.id} style={{ position: 'relative' }}>
-                        <img src={product.image} alt={product.category} />
-                      </div>
-                    ))}
-                  </TinySlider>
                 </div>
               </div>
             </div>
@@ -101,9 +189,7 @@ class FurnitureGallery extends React.Component {
                   from <span className={styles.price}>$ {products[18].price}</span>
                 </div>
                 <div className={styles.name}>{products[18].name}</div>
-                <Button className={styles.button}>
-                  <a>shop now</a>
-                </Button>
+                <Button className={styles.button}>shop now</Button>
               </div>
             </div>
           </div>
@@ -132,6 +218,7 @@ FurnitureGallery.propTypes = {
       newFurniture: PropTypes.bool,
       image: PropTypes.string,
       oldPrice: PropTypes.number,
+      userStars: PropTypes.number,
     })
   ),
 };

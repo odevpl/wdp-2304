@@ -39,7 +39,7 @@ const ProductPage = () => {
   const products = useSelector(state => getProductByCategory(state, category));
 
   const settings = {
-    container: '.sliderBox',
+    container: '.productPageSliderBox',
     items: 5,
     lazyload: true,
     nav: false,
@@ -59,16 +59,20 @@ const ProductPage = () => {
 
   return (
     <div className={styles.root}>
-      <div className='container'>
+      <div className={`container ${styles.container}`}>
         <div className='row'>
           <div className={`col-md-5 ${styles.leftBox}`}>
             <div className={styles.image}>
               <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
             </div>
-            <div className={`sliderBox ${styles.sliderBox}`}>
+            <div className={`productPageSliderBox ${styles.sliderBox}`}>
               <TinySlider settings={settings}>
                 {products.map(product => (
-                  <div key={product.id} style={{ position: 'relative' }}>
+                  <div
+                    className={styles.imageBox}
+                    key={product.id}
+                    style={{ position: 'relative' }}
+                  >
                     <img src={product.image} alt={product.category} />
                   </div>
                 ))}

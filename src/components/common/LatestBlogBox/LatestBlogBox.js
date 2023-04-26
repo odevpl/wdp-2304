@@ -43,7 +43,7 @@ const LatestBlogBox = ({ isActive }) => {
   );
 };
 LatestBlogBox.propTypes = {
-  isActive: PropTypes.string,
+  isActive: PropTypes.bool,
 };
 
 export default LatestBlogBox;
