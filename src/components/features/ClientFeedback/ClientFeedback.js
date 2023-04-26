@@ -33,7 +33,7 @@ const ClientFeedback = () => {
               </ul>
             </div>
           </div>
-          <FeedbackData feedback={feedbacks[currentFeedbackIndex]} />
+          <FeedbackData index={currentFeedbackIndex} />
         </div>
       </div>
     </div>
