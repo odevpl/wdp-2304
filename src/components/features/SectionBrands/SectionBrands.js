@@ -13,21 +13,29 @@ const SectionBrands = () => {
 
   const settings = {
     lazyload: true,
-    mouseDrag: true,
+    mouseDrag: false,
     nav: false,
     container: '.cardContent',
     controlsText: '<>',
     gutter: 20,
     responsive: {
-      576: {
+      376: {
+        slideBy: 1,
+        items: 1,
+      },
+      476: {
         slideBy: 2,
         items: 2,
       },
-      768: {
+      668: {
         slideBy: 3,
         items: 3,
       },
-      992: {
+      892: {
+        slideBy: 4,
+        items: 4,
+      },
+      1100: {
         slideBy: 6,
         items: 6,
       },
