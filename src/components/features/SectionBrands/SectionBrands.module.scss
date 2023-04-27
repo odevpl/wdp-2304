@@ -5,18 +5,15 @@
 }
 
 .cardContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card .brandImage {
-  height: 130px;
-  width: 200px;
-  padding: 1px;
-  background: $card-bg-color;
-  margin: 0 10px;
+  padding: 8px 80px;
+  margin: 0px;
+
 }
 
+.card .brandImage  {
+  height: 120px;
+  width: 140px;
+}
 .card .brandImage img {
   height: 100%;
   width: 100%;
@@ -26,5 +23,6 @@
 .arrow {
   font-size: 20px;
   margin: 10px;
-  cursor: pointer;
+
 }
+
