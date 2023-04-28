@@ -18,31 +18,6 @@
     margin-bottom: 30px;
     position: relative;
 
-    :global(.row) > * {
-      border-bottom: 4px solid $panel-bar-border-bottom;
-    }
-
-    .heading {
-      position: relative;
-
-      h3 {
-        color: $new-furniture-heading-color;
-        text-transform: uppercase;
-        font-size: 20px;
-        line-height: 38px;
-        margin: 0;
-        letter-spacing: 1px;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 45px;
-        border-bottom: 4px solid $new-furniture-heading-color-before;
-      }
-    }
   }
 
   .box {
