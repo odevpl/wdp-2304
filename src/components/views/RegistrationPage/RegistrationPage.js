@@ -7,8 +7,11 @@ import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const RegistrationPage = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
@@ -17,16 +20,30 @@ const RegistrationPage = () => {
   const [selectAll, setSelectAll] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
 
-  const handleEmailChange = event => {
-    setEmail(event.target.value);
+  const {
+    register,
+    handleSubmit: validate,
+    formState: { errors },
+  } = useForm();
+
+  const handleFirstNameChange = e => {
+    setFirstName(e.target.value);
   };
 
-  const handlePasswordChange = event => {
-    setPassword(event.target.value);
+  const handleLastNameChange = e => {
+    setLastName(e.target.value);
   };
 
-  const handlePasswordConfirmChange = event => {
-    setPasswordConfirm(event.target.value);
+  const handleEmailChange = e => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = e => {
+    setPassword(e.target.value);
+  };
+
+  const handlePasswordConfirmChange = e => {
+    setPasswordConfirm(e.target.value);
   };
 
   const handleAgreeToTermsChange = () => {
@@ -43,8 +60,8 @@ const RegistrationPage = () => {
     setNewsletter(!newsletter);
   };
 
-  const handleFormSubmit = event => {
-    event.preventDefault();
+  const handleFormSubmit = e => {
+    e.preventDefault();
   };
 
   return (
@@ -74,30 +91,77 @@ const RegistrationPage = () => {
           <div className={styles.formBody}>
             <h5>Podaj dane do rejestracji</h5>
             <div className={styles.formInputs}>
+              <Form.Group controlId='firstName'>
+                <Form.Control
+                  {...register('firstName', {
+                    required: true,
+                    minLength: 3,
+                    maxLength: 30,
+                  })}
+                  type='firstName'
+                  value={firstName}
+                  onChange={handleFirstNameChange}
+                  placeholder='Imię *'
+                />
+              </Form.Group>
+              {errors.firstName && <span>Musisz podać imię.</span>}
+              <Form.Group controlId='lastName'>
+                <Form.Control
+                  {...register('lastName', {
+                    required: true,
+                    minLength: 3,
+                    maxLength: 30,
+                  })}
+                  type='lastName'
+                  value={lastName}
+                  onChange={handleLastNameChange}
+                  placeholder='Nazwisko *'
+                />
+              </Form.Group>
+              {errors.lastName && <span>Musisz podać nazwisko.</span>}
               <Form.Group controlId='emailInput'>
                 <Form.Control
+                  {...register('email', { required: true, pattern: /@/ })}
                   type='email'
                   value={email}
                   onChange={handleEmailChange}
                   placeholder='E-mail *'
                 />
               </Form.Group>
+              {errors.email && (
+                <span>Adres e-mail powinien składać się ze znaku &apos;@&apos;.</span>
+              )}
               <Form.Group controlId='passwordInput'>
                 <Form.Control
+                  {...register('password', {
+                    required: true,
+                    minLength: 3,
+                  })}
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={handlePasswordChange}
                   placeholder='Hasło *'
                 />
               </Form.Group>
+              {errors.password && (
+                <span>Hasło musi się składać z minimum trzech znaków.</span>
+              )}
               <Form.Group controlId='passwordConfirmInput'>
                 <Form.Control
+                  {...register('passwordConfirm', {
+                    required: true,
+                    minLength: 3,
+                    validate: value => value === password,
+                  })}
                   type={showPassword ? 'text' : 'password'}
                   value={passwordConfirm}
                   onChange={handlePasswordConfirmChange}
                   placeholder='Powtórz hasło *'
                 />
               </Form.Group>
+              {errors.passwordConfirm && (
+                <span>Musisz wpisać dokładnie takie samo hasło, jak powyżej.</span>
+              )}
             </div>
             <Form.Group
               controlId='showPasswordSwitch'
@@ -123,6 +187,7 @@ const RegistrationPage = () => {
                 onChange={handleSelectAllChange}
               />
               <Form.Check
+                {...register('agreeToTerms', { required: true })}
                 className={`${styles.checkbox} form-check-input-focus-border`}
                 type='checkbox'
                 label={
@@ -133,6 +198,9 @@ const RegistrationPage = () => {
                 checked={agreeToTerms}
                 onChange={handleAgreeToTermsChange}
               />
+              {errors.agreeToTerms && (
+                <span>Musisz zaakceptować warunki regulaminu.</span>
+              )}
               <Form.Check
                 className={styles.checkbox}
                 type='checkbox'
@@ -148,7 +216,9 @@ const RegistrationPage = () => {
               <FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon> Wróć
             </Link>
             <Link to='/'>
-              <Button variant='orange'>Zarejestruj się</Button>
+              <Button variant='orange' onClick={validate()}>
+                Zarejestruj się
+              </Button>
             </Link>
           </div>
         </Form>
