@@ -182,7 +182,9 @@ class FurnitureGallery extends React.Component {
                 </div>
               </div>
             </div>
-            <div className={`right-section col-6 ${styles.rightSection}`}>
+            <div
+              className={`right-section col-6 d-none d-md-block ${styles.rightSection}`}
+            >
               <div className={styles.image}>
                 <img src={products[18].image} alt={products[18].category} />
                 <div className={styles.sale}>

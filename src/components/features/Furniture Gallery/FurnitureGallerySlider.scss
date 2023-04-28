@@ -15,6 +15,7 @@
       height: 70px;
       background-color: $furnitureGallerySlider-button-bg;
       color: $furnitureGallerySlider-button-font;
+
       &.active,
       &:hover {
         color: $furnitureGallerySlider-button-font-hover;
@@ -34,6 +35,7 @@
       top: 8px;
     }
   }
+
   .tns-ovh .tns-inner .tns-slider {
     .tns-item {
       img {
@@ -41,6 +43,7 @@
         width: 100%;
         object-fit: cover;
       }
+
       .activeSlide {
         opacity: 1;
         animation: fadeIn 2s forwards;
@@ -53,6 +56,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
