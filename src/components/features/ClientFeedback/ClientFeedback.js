@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-
+import HeaderPanelBar from '../../common/HeaderPanelBar/HeaderPanelBar';
 import FeedbackData from '../FeedbackData/FeedbackData';
 import styles from './ClientFeedback.module.scss';
 import { getAll } from '../../../redux/feedbackRedux';
@@ -14,10 +14,7 @@ const ClientFeedback = () => {
       <div className='container'>
         <div className={styles.featureBar}>
           <div className='row no-gutters align-items-end'>
-            <div className={'col-auto ' + styles.heading}>
-              <h3>Client Feedback</h3>
-            </div>
-
+            <HeaderPanelBar title='Client Feedback' />
             <div className={'col-auto ' + styles.dots}>
               <ul>
                 {feedbacks.map((feedback, index) => (

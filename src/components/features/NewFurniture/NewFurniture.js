@@ -4,6 +4,7 @@ import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../Swipeable/Swipeable';
 import StickyBar from '../StickyBar/StickyBar';
+import HeaderPanelBar from '../../common/HeaderPanelBar/HeaderPanelBar';
 
 class NewFurniture extends React.Component {
   state = {
@@ -92,9 +93,7 @@ class NewFurniture extends React.Component {
           <div className='container'>
             <div className={styles.panelBar}>
               <div className='row no-gutters align-items-end'>
-                <div className={'col-auto ' + styles.heading}>
-                  <h3>New furniture</h3>
-                </div>
+                <HeaderPanelBar title='New furniture' />
                 <div className={'col ' + styles.menu}>
                   <ul>
                     {categories.map(item => (

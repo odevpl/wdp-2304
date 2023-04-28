@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './LatestBlog.module.scss';
 import LatestBlogBox from '../../common/LatestBlogBox/LatestBlogBox';
+import HeaderPanelBar from '../../common/HeaderPanelBar/HeaderPanelBar';
 
 const LatestBlog = () => {
   return (
@@ -9,9 +10,7 @@ const LatestBlog = () => {
       <div className='container'>
         <div className={styles.featureBar}>
           <div className='row no-gutters align-items-end'>
-            <div className={'col-auto ' + styles.heading}>
-              <h3>Latest blog</h3>
-            </div>
+            <HeaderPanelBar title='Latest blog' />
             <div className={'col-auto ' + styles.dots}>
               <ul>
                 <li>

@@ -12,12 +12,9 @@
   }
 
   .panelBar {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     position: relative;
 
-    :global(.row) > * {
-      border-bottom: 4px solid $panel-bar-border-bottom;
-    }
 
     .heading {
       position: relative;
@@ -43,6 +40,7 @@
 
     .menu {
       text-align: center;
+      margin-top: -35px !important;
       ul {
         margin: 0;
         padding: 0;
