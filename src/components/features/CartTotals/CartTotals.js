@@ -3,12 +3,16 @@ import styles from './CartTotals.module.scss';
 import propTypes from 'prop-types';
 import CartButton from '../../common/CartButton/CartButton';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { removeAllProducts } from '../../../redux/cartRedux';
 
 const CartTotals = ({ ...props }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleClick = () => {
     window.scrollTo(0, 0);
+    dispatch(removeAllProducts());
     navigate('/');
   };
 
