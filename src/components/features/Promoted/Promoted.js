@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Promoted.module.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getAll } from '../../../redux/productsRedux';
 import ProductBoxDescription from '../../common/ProductBoxDescription/ProductBoxDescription';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,12 +12,20 @@ import {
 import { getPromoted } from '../../../redux/promotedRedux';
 import Button from '../../common/Button/Button';
 import { Swipeable } from '../Swipeable/Swipeable';
+import { addProduct } from '../../../redux/cartRedux';
 
 const Promoted = () => {
   const products = useSelector(getAll);
   const Promoted = useSelector(getPromoted);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = e => {
+    e.preventDefault();
+    dispatch(addProduct(product));
+  };
 
   const product = products.find(product => product.id === 'aenean-ru-bristique-5'); // na razie jeden konkretny produkt bo task dotyczył tylko wyglądu
+
   return (
     <div className={`container ${styles.root}`}>
       <div className='row'>
@@ -42,7 +50,11 @@ const Promoted = () => {
               </div>
             </div>
             <div className={styles.addToCartContainer}>
-              <Button variant='small' className={styles.btnPrimary}>
+              <Button
+                variant='small'
+                onClick={handleAddToCart}
+                className={styles.btnPrimary}
+              >
                 <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
               </Button>
               <div className={styles.dotsTextContainer}>

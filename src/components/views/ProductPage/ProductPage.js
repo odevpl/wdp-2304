@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getProductByCategory, getProductById } from '../../../redux/productsRedux';
 import TinySlider from 'tiny-slider-react';
@@ -20,23 +20,14 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
+import { addProduct } from '../../../redux/cartRedux';
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
   const { productId } = useParams();
-  const {
-    name,
-    image,
-    category,
-    id,
-    stars,
-    userStars,
-    oldPrice,
-    price,
-    description,
-    availability,
-  } = useSelector(state => getProductById(state, productId));
-  const products = useSelector(state => getProductByCategory(state, category));
+  const { ...product } = useSelector(state => getProductById(state, productId));
+  const products = useSelector(state => getProductByCategory(state, product.category));
+  const dispatch = useDispatch();
 
   const settings = {
     container: '.productPageSliderBox',
@@ -57,13 +48,21 @@ const ProductPage = () => {
     setQuantity(quantity + 1);
   }
 
+  const handleAddToCart = e => {
+    e.preventDefault();
+    dispatch(addProduct(product));
+  };
+
   return (
     <div className={styles.root}>
       <div className={`container ${styles.container}`}>
         <div className='row'>
           <div className={`col-md-5 ${styles.leftBox}`}>
             <div className={styles.image}>
-              <img alt={category} src={`${process.env.PUBLIC_URL}${image}`} />
+              <img
+                alt={product.category}
+                src={`${process.env.PUBLIC_URL}${product.image}`}
+              />
             </div>
             <div className={`productPageSliderBox ${styles.sliderBox}`}>
               <TinySlider settings={settings}>
@@ -83,14 +82,14 @@ const ProductPage = () => {
             <div className={styles.firstRow}>
               <div className={styles.leftSide}>
                 <div className={styles.name}>
-                  <h2>{name}</h2>
+                  <h2>{product.name}</h2>
                 </div>
                 <div className={styles.stars}>
                   <ProductRating
                     noPadding
-                    id={id}
-                    stars={stars}
-                    userStars={userStars}
+                    id={product.id}
+                    stars={product.stars}
+                    userStars={product.userStars}
                   />
                   <span className={styles.reviewCount}>(0 reviews)</span>
                   <Button className={styles.addReview}>Add Your Review</Button>
@@ -102,12 +101,14 @@ const ProductPage = () => {
               </div>
             </div>
             <div className={styles.secondRow}>
-              {oldPrice && <div className={styles.oldPrice}>$ {oldPrice}</div>}
-              <div className={styles.price}>$ {price}</div>
+              {product.oldPrice && (
+                <div className={styles.oldPrice}>$ {product.oldPrice}</div>
+              )}
+              <div className={styles.price}>$ {product.price}</div>
             </div>
             <div className={styles.thirdRow}>
               <div className={styles.firstColumn}>
-                <Button>
+                <Button onClick={handleAddToCart}>
                   <FontAwesomeIcon icon={faShoppingBasket} />
                   Add To Cart
                 </Button>
@@ -154,12 +155,12 @@ const ProductPage = () => {
             </div>
             <div className={styles.fourthRow}>
               <h2>Quick Overview</h2>
-              <p>{description}</p>
+              <p>{product.description}</p>
             </div>
             <div className={styles.fifthRow}>
               <div>
                 <span className={styles.title}>Availability: </span>
-                {availability ? (
+                {product.availability ? (
                   <span className={styles.subtitle}>in Stock</span>
                 ) : (
                   <span className={styles.subtitle}>no Stock</span>
@@ -167,7 +168,7 @@ const ProductPage = () => {
               </div>
               <div>
                 <span className={styles.title}>Category: </span>
-                <span className={styles.subtitle}>{category}</span>
+                <span className={styles.subtitle}>{product.category}</span>
               </div>
             </div>
             <div className={styles.sixth}>

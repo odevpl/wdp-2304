@@ -43,6 +43,10 @@ class FurnitureGallery extends React.Component {
     }, 500);
   }
 
+  handleAddToCart = selectedImage => {
+    this.props.addProduct(selectedImage);
+  };
+
   render() {
     const { categories, products } = this.props;
     const { selectedCategory, selectedImage, fadeImage, fadeCategory } = this.state;
@@ -139,7 +143,12 @@ class FurnitureGallery extends React.Component {
                         <FontAwesomeIcon icon={faEye} />
                         <div className={styles.iconCloud}>Add To Watch</div>
                       </Button>
-                      <Button noHover variant='outline' className={styles.iconButton}>
+                      <Button
+                        noHover
+                        variant='outline'
+                        onClick={() => this.handleAddToCart(selectedImage)}
+                        className={styles.iconButton}
+                      >
                         <FontAwesomeIcon icon={faShoppingBasket} />
                         <div className={styles.iconCloud}>Add To Cart</div>
                       </Button>
@@ -223,6 +232,7 @@ FurnitureGallery.propTypes = {
       userStars: PropTypes.number,
     })
   ),
+  addProduct: PropTypes.func,
 };
 
 FurnitureGallery.defaultProps = {

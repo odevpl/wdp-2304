@@ -6,10 +6,10 @@ import CartUpdateBar from '../../features/CartUpdateBar/CartUpdateBar';
 import CartProduct from '../../features/CartProduct/CartProduct';
 import CartTotals from '../../features/CartTotals/CartTotals';
 import { useSelector } from 'react-redux';
-import { getAllProducts } from '../../../redux/cartRedux';
+import { getAll } from '../../../redux/cartRedux';
 
 const Cart = () => {
-  const products = useSelector(getAllProducts);
+  const cartProducts = useSelector(getAll);
 
   return (
     <div className={styles.root}>
@@ -28,9 +28,9 @@ const Cart = () => {
           <div className={`col-2 ${styles.center}`}>QUANTITY</div>
           <div className={`col-2 ${styles.center}`}>TOTAL</div>
         </div>
-        <CartProduct {...products[0]} />
-        <CartProduct {...products[10]} />
-        <CartProduct {...products[30]} />
+        {cartProducts.map(product => (
+          <CartProduct key={product.id} {...product} />
+        ))}
         <CartUpdateBar />
         <CartTotals />
       </div>

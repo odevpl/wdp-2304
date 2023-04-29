@@ -17,6 +17,7 @@ import { getSelected } from '../../../redux/productsRedux';
 
 import { toggleFavorite } from '../../../redux/productsRedux';
 import ProductPopUp from '../ProductPopUp/ProductPopUp';
+import { addProduct } from '../../../redux/cartRedux';
 
 const ProductBox = props => {
   const {
@@ -59,6 +60,12 @@ const ProductBox = props => {
       }
     }
   };
+
+  const handleAddToCart = e => {
+    e.preventDefault();
+    dispatch(addProduct(props));
+  };
+
   return (
     <div className={styles.root}>
       {popUp && <ProductPopUp popUpOpen={setPopUp} productData={props}></ProductPopUp>}
@@ -72,7 +79,7 @@ const ProductBox = props => {
           <Button onClick={openPopUp} variant='small'>
             Quick View
           </Button>
-          <Button variant='small'>
+          <Button variant='small' onClick={handleAddToCart}>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
@@ -81,7 +88,11 @@ const ProductBox = props => {
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={favorite && styles.active} onClick={handleFavorite}>
+          <Button
+            variant='outline'
+            className={favorite && styles.active}
+            onClick={handleFavorite}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
