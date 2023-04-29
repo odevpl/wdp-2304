@@ -1182,6 +1182,19 @@ const initialState = {
   },
 
   logOnUser: {},
+
+  registeredUsers: [
+    {
+      login: 'admin',
+      email: 'admin@admin.com',
+      password: 'pass',
+    },
+    {
+      login: '123',
+      email: '123',
+      password: '123',
+    },
+  ],
 };
 
 export default initialState;

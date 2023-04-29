@@ -17,8 +17,8 @@ const TopBar = () => {
   const handleCloseModal = () => setShowLoginModal(false);
   const handleShowModal = () => setShowLoginModal(true);
 
-  const onConfirmLogin = (email, password) => {
-    dispatch(logOnUser({ email: email, password: password }));
+  const onConfirmLogin = (login, password) => {
+    dispatch(logOnUser({ login, password }));
     handleCloseModal();
   };
 
@@ -49,7 +49,7 @@ const TopBar = () => {
             <ul>
               <li>
                 {user ? (
-                  <span className={styles.text}>{user.email}</span>
+                  <span className={styles.text}>{user.login}</span>
                 ) : (
                   <Button onClick={handleShowModal}>
                     <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
