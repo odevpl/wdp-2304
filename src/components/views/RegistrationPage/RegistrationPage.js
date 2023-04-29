@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 const RegistrationPage = () => {
@@ -20,6 +20,7 @@ const RegistrationPage = () => {
   const [selectAll, setSelectAll] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
 
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit: validate,
@@ -60,14 +61,14 @@ const RegistrationPage = () => {
     setNewsletter(!newsletter);
   };
 
-  const handleFormSubmit = e => {
-    e.preventDefault();
+  const handleFormSubmit = () => {
+    navigate('/');
   };
 
   return (
     <div className='container'>
       <div className={styles.wrapper}>
-        <Form onSubmit={handleFormSubmit}>
+        <Form>
           <div className={styles.formHeader}>
             <Form.Check
               inline
@@ -98,13 +99,15 @@ const RegistrationPage = () => {
                     minLength: 3,
                     maxLength: 30,
                   })}
-                  type='firstName'
+                  type='text'
                   value={firstName}
                   onChange={handleFirstNameChange}
                   placeholder='Imię *'
                 />
               </Form.Group>
-              {errors.firstName && <span>Musisz podać imię.</span>}
+              {errors.firstName && (
+                <small className='text-danger'>Musisz podać imię.</small>
+              )}
               <Form.Group controlId='lastName'>
                 <Form.Control
                   {...register('lastName', {
@@ -112,13 +115,15 @@ const RegistrationPage = () => {
                     minLength: 3,
                     maxLength: 30,
                   })}
-                  type='lastName'
+                  type='text'
                   value={lastName}
                   onChange={handleLastNameChange}
                   placeholder='Nazwisko *'
                 />
               </Form.Group>
-              {errors.lastName && <span>Musisz podać nazwisko.</span>}
+              {errors.lastName && (
+                <small className='text-danger'>Musisz podać nazwisko.</small>
+              )}
               <Form.Group controlId='emailInput'>
                 <Form.Control
                   {...register('email', { required: true, pattern: /@/ })}
@@ -129,7 +134,9 @@ const RegistrationPage = () => {
                 />
               </Form.Group>
               {errors.email && (
-                <span>Adres e-mail powinien składać się ze znaku &apos;@&apos;.</span>
+                <small className='text-danger'>
+                  Adres e-mail powinien składać się ze znaku &apos;@&apos;.
+                </small>
               )}
               <Form.Group controlId='passwordInput'>
                 <Form.Control
@@ -144,7 +151,9 @@ const RegistrationPage = () => {
                 />
               </Form.Group>
               {errors.password && (
-                <span>Hasło musi się składać z minimum trzech znaków.</span>
+                <small className='text-danger'>
+                  Hasło musi się składać z minimum trzech znaków.
+                </small>
               )}
               <Form.Group controlId='passwordConfirmInput'>
                 <Form.Control
@@ -160,7 +169,9 @@ const RegistrationPage = () => {
                 />
               </Form.Group>
               {errors.passwordConfirm && (
-                <span>Musisz wpisać dokładnie takie samo hasło, jak powyżej.</span>
+                <small className='text-danger'>
+                  Musisz wpisać dokładnie takie samo hasło, jak powyżej.
+                </small>
               )}
             </div>
             <Form.Group
@@ -199,7 +210,9 @@ const RegistrationPage = () => {
                 onChange={handleAgreeToTermsChange}
               />
               {errors.agreeToTerms && (
-                <span>Musisz zaakceptować warunki regulaminu.</span>
+                <small className='text-danger'>
+                  Musisz zaakceptować warunki regulaminu.
+                </small>
               )}
               <Form.Check
                 className={styles.checkbox}
@@ -215,11 +228,9 @@ const RegistrationPage = () => {
               {' '}
               <FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon> Wróć
             </Link>
-            <Link to='/'>
-              <Button variant='orange' onClick={validate()}>
-                Zarejestruj się
-              </Button>
-            </Link>
+            <Button variant='orange' type='submit' onClick={validate(handleFormSubmit)}>
+              Zarejestruj się
+            </Button>
           </div>
         </Form>
       </div>
