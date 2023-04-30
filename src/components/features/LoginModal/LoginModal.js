@@ -1,17 +1,36 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './LoginModal.module.scss';
+import { getRegisteredUsersByLogin } from '../../../redux/logOnUserRedux';
+import { useSelector } from 'react-redux';
 
 const LoginModal = ({ onClose, handleLogin }) => {
   /* dodałem prostą funkcję która z modala  dodaje użytkownika do logOnUser w state.
   Następna osoba która będzie rozbudowywać o funkcję sprawdzania poprawności loginu i hasła, niech np storzy nowy state z zarejestrowanymi użytkownikami.
   Potem niech usunie ten komenatrz... :) */
 
-  const [email, setEmail] = useState('');
+  const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
 
-  const handleSubmit = () => {
-    handleLogin(email, password);
+  const registeredUsers = useSelector(state => getRegisteredUsersByLogin(state, login));
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    if (registeredUsers && registeredUsers.password === password) {
+      handleLogin(login, password);
+    } else {
+      if (!login) {
+        setError('Podaj login');
+      } else if (!registeredUsers) {
+        setError('Wprowadzono nieprawidłowy login');
+      } else if (registeredUsers.password !== password) {
+        setError('Wprowadzono nieprawidłowe hasło');
+      } else {
+        setError('Wprowadzono nieprawidłowy login i hasło');
+      }
+    }
   };
 
   return (
@@ -33,15 +52,14 @@ const LoginModal = ({ onClose, handleLogin }) => {
           <div className='modal-body'>
             <form onSubmit={handleSubmit}>
               <div className='form-group'>
-                <label htmlFor='email'>Email address</label>
+                <label htmlFor='login'>Login</label>
                 <input
-                  type='email'
+                  type='login'
                   className='form-control'
-                  id='email'
-                  aria-describedby='emailHelp'
-                  placeholder='Enter email'
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  id='login'
+                  placeholder='Enter login'
+                  value={login}
+                  onChange={e => setLogin(e.target.value)}
                 />
               </div>
               <div className='form-group'>
@@ -57,6 +75,7 @@ const LoginModal = ({ onClose, handleLogin }) => {
                 <small className='form-text text-muted'>Forgot password?</small>
               </div>
               <div className={`modal-footer ${styles.modalFooter}`}>
+                {error && <small className='text-danger'>{error} </small>}
                 <button className={styles.button} type='submit'>
                   Login
                 </button>

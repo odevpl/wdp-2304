@@ -1,3 +1,8 @@
+export const getRegisteredUsers = ({ registeredUsers }) => registeredUsers;
+
+export const getRegisteredUsersByLogin = ({ registeredUsers }, login) =>
+  registeredUsers.find(user => user.login === login);
+
 const reducerName = 'logOnUser';
 const createActionName = actionName => `app/${reducerName}/${actionName}`;
 const LOGIN_USER = createActionName('LOGIN_USER');
