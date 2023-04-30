@@ -1,0 +1,75 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 2rem;
+}
+
+.reviewsContainer {
+  border: solid $reviews-border 1px;
+  height: 525px;
+}
+
+.insideReviews {
+  display: flex;
+}
+
+.menuBar {
+  padding: 20px;
+  border-right: solid $menu-bar-border 1px;
+  border-bottom: solid $menu-bar-border 1px;
+  p {
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.active {
+ border-bottom: 0;
+ color: $active-bar-color
+}
+
+.insideBox {
+  padding: 35px;
+  p{
+    font-weight: 250;
+    &:nth-of-type(2) {
+      margin-bottom: 0;
+    }
+  }
+  h6{
+    padding: 5px 0 5px 0;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  P {
+    margin: 0;
+  }
+}
+
+.stars {
+  padding: 0;
+}
+
+.inputBox {
+  display: flex;
+}
+
+.input {
+  padding-right: 20px;
+  input {
+    width: 400px;
+    padding: 8px;
+  }
+}
+
+.button {
+  background-color: $button-bg-color;
+  color: $button-txt-color;
+  width: 15%;
+  border-style: none;
+}
+

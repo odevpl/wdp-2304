@@ -27,6 +27,7 @@ $opacity: rgba(42, 42, 42, 0);
 $blue: #4267b2;
 $red: #cc0000;
 $transparentGray: rgba(200, 200, 200, 0.5);
+$black: #000000;
 
 //COLORS USED IN PROJECT
 
@@ -289,3 +290,10 @@ $slider-button-background: $white;
 $slider-button-text: $darkGray;
 $slider-button-hover-text: $white;
 $slider-button-hover-background: $orange;
+
+//reviews.module.scss
+$reviews-border: $whiteGray;
+$menu-bar-border: $whiteGray;
+$active-bar-color: $orange;
+$button-bg-color: $black;
+$button-txt-color: $white;
