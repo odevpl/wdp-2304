@@ -32,7 +32,6 @@ const ProductBox = props => {
     image,
     category,
     oldPrice,
-    isSelected,
   } = props;
   const dispatch = useDispatch();
 
@@ -52,8 +51,8 @@ const ProductBox = props => {
 
   const handleSelectedProduct = e => {
     e.preventDefault();
-    if (selectedProducts.length < 4 || isSelected) {
-      if (isSelected) {
+    if (selectedProducts.length < 4 || compare) {
+      if (compare) {
         dispatch(removeSelected(id));
       } else {
         dispatch(addSelected(id));
