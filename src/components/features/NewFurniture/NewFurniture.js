@@ -84,7 +84,7 @@ class NewFurniture extends React.Component {
         this.setState({ activePage: activePage + 0 });
       }
     };
-    const selectedProducts = products.filter(item => item.isSelected === true);
+    const selectedProducts = products.filter(item => item.compare === true);
 
     return (
       <div className={classes.join(' ')}>

@@ -22,7 +22,7 @@ export const addSelected = payload => ({ payload, type: ADD_SELECTED });
 export const removeSelected = payload => ({ payload, type: REMOVE_SELECTED });
 export const toggleFavorite = payload => ({ payload, type: TOGGLE_FAVORITE });
 export const getSelected = ({ products }) =>
-  products.filter(item => item.isSelected === true);
+  products.filter(item => item.compare === true);
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -41,11 +41,11 @@ export default function reducer(statePart = [], action = {}) {
       );
     case ADD_SELECTED:
       return statePart.map(product =>
-        product.id === action.payload ? { ...product, isSelected: true } : product
+        product.id === action.payload ? { ...product, compare: true } : product
       );
     case REMOVE_SELECTED:
       return statePart.map(product =>
-        product.id === action.payload ? { ...product, isSelected: false } : product
+        product.id === action.payload ? { ...product, compare: false } : product
       );
     default:
       return statePart;
