@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ProductList.module.scss';
+import SectionBrands from '../../features/SectionBrands/SectionBrands';
 
 const ProductList = () => {
   return (
@@ -14,6 +15,7 @@ const ProductList = () => {
         </div>
         <div className={styles.brands}>Brands</div>
       </div>
+      <SectionBrands />
     </div>
   );
 };
