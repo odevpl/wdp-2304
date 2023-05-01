@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import ProductRating from '../../features/ProductRating/ProductRating';
-
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addSelected } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
 import { removeSelected } from '../../../redux/productsRedux';
 import { getSelected } from '../../../redux/productsRedux';
-
-import { toggleFavorite } from '../../../redux/productsRedux';
+import { removeFromFavorite } from '../../../redux/productsRedux';
+import { addToFavorite } from '../../../redux/productsRedux';
 import ProductPopUp from '../ProductPopUp/ProductPopUp';
 import { addProduct } from '../../../redux/cartRedux';
 
@@ -32,13 +31,32 @@ const ProductBox = props => {
     image,
     category,
     oldPrice,
-    isSelected,
   } = props;
   const dispatch = useDispatch();
 
+  const [initialFavorite, setInitialFavorite] = useState(favorite);
+  const [favorites, setFavorites] = useState(favorite);
+
+  useEffect(() => {
+    const favoriteFromLocalStorage = localStorage.getItem(`favorite-${id}`);
+    if (favoriteFromLocalStorage !== null) {
+      setFavorites(JSON.parse(favoriteFromLocalStorage));
+    } else {
+      setFavorites(initialFavorite);
+    }
+  }, [id, initialFavorite]);
+
   const handleFavorite = e => {
     e.preventDefault();
-    dispatch(toggleFavorite(id));
+    if (favorites) {
+      dispatch(removeFromFavorite(id));
+      setFavorites(false);
+      localStorage.setItem(`favorite-${id}`, JSON.stringify(false));
+    } else {
+      dispatch(addToFavorite(id));
+      setFavorites(true);
+      localStorage.setItem(`favorite-${id}`, JSON.stringify(true));
+    }
   };
 
   const [popUp, setPopUp] = useState(false);
@@ -52,8 +70,8 @@ const ProductBox = props => {
 
   const handleSelectedProduct = e => {
     e.preventDefault();
-    if (selectedProducts.length < 4 || isSelected) {
-      if (isSelected) {
+    if (selectedProducts.length < 4 || compare) {
+      if (compare) {
         dispatch(removeSelected(id));
       } else {
         dispatch(addSelected(id));
@@ -90,7 +108,7 @@ const ProductBox = props => {
         <div className={styles.outlines}>
           <Button
             variant='outline'
-            className={favorite && styles.active}
+            className={favorites && styles.active}
             onClick={handleFavorite}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
