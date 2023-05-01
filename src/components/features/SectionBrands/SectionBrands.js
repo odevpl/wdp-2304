@@ -49,7 +49,7 @@ const SectionBrands = () => {
           <TinySlider settings={settings}>
             {brandsArray.map(brand => (
               <div className={styles.brandImage} key={brand}>
-                <img src={brand} alt='brand' />
+                <img src={`${process.env.PUBLIC_URL}${brand}`} alt='brand' />
               </div>
             ))}
           </TinySlider>

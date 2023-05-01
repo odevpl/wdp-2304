@@ -21,7 +21,7 @@ const Blog = () => {
           <div className='col-md-9'>
             <div className={styles.blogBox}>
               <h5>{post.title}</h5>
-              <img src={post.image} alt='photo' />
+              <img src={`${process.env.PUBLIC_URL}${post.image}`} alt='photo' />
               <p>{post.description}</p>
               <div className={styles.iconsContainer}>
                 <div>
