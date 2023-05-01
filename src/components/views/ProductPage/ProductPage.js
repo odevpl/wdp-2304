@@ -22,6 +22,8 @@ import {
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import { addProduct } from '../../../redux/cartRedux';
 import Reviews from '../../features/Reviews/Reviews';
+import Banner from '../../common/Banner/Banner';
+import { useEffect } from 'react';
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
@@ -29,6 +31,10 @@ const ProductPage = () => {
   const { ...product } = useSelector(state => getProductById(state, productId));
   const products = useSelector(state => getProductByCategory(state, product.category));
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // przewija stronę na górę
+  }, []);
 
   const settings = {
     container: '.productPageSliderBox',
@@ -56,6 +62,7 @@ const ProductPage = () => {
 
   return (
     <div className={styles.root}>
+      <Banner product={product} />
       <div className={`container ${styles.container}`}>
         <div className='row'>
           <div className={`col-md-5 ${styles.leftBox}`}>

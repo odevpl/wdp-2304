@@ -31,7 +31,10 @@ const Promoted = () => {
       <div className='row'>
         <div className={`col-6 col-lg-4 d-none d-md-block ${styles.card}`}>
           <div className={styles.imageContainer}>
-            <img src={product.image} alt={product.name}></img>
+            <img
+              src={`${process.env.PUBLIC_URL}${product.image}`}
+              alt={product.name}
+            ></img>
             <ProductBoxDescription
               showEyeButton
               compare={product.compare}
@@ -76,7 +79,10 @@ const Promoted = () => {
         </div>
         <div className='col-md-6 col-lg-8 col-12'>
           <div className={styles.slider}>
-            <img src={Promoted.image} alt={Promoted.imageTitle}></img>
+            <img
+              src={`${process.env.PUBLIC_URL}${Promoted.image}`}
+              alt={Promoted.imageTitle}
+            ></img>
             <div className={styles.sliderContainer}>
               <h4 className={styles.title}>
                 {Promoted.dealTitle} <span>{Promoted.dealTitleHighlited}</span>

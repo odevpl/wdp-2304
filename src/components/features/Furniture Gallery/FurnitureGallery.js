@@ -127,7 +127,7 @@ class FurnitureGallery extends React.Component {
                   <div className={styles.imageBox}>
                     <img
                       className={`${fadeImage ? styles.fadeOut : styles.fadeIn}`}
-                      src={selectedImage.image}
+                      src={`${process.env.PUBLIC_URL}${selectedImage.image}`}
                       alt={selectedImage.category}
                     />
                     <div className={styles.iconButtons}>
@@ -181,7 +181,7 @@ class FurnitureGallery extends React.Component {
                                 : ''
                             }`}
                             onClick={() => this.handleImageChange(product)}
-                            src={product.image}
+                            src={`${process.env.PUBLIC_URL}${product.image}`}
                             alt={product.category}
                           />
                         </div>
@@ -195,7 +195,10 @@ class FurnitureGallery extends React.Component {
               className={`right-section col-6 d-none d-md-block ${styles.rightSection}`}
             >
               <div className={styles.image}>
-                <img src={products[18].image} alt={products[18].category} />
+                <img
+                  src={`${process.env.PUBLIC_URL}${products[18].image}`}
+                  alt={products[18].category}
+                />
                 <div className={styles.sale}>
                   from <span className={styles.price}>$ {products[18].price}</span>
                 </div>

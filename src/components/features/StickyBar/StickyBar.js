@@ -27,7 +27,7 @@ const StickyBar = ({ products }) => {
             className={styles.stickyBarImageContainer}
             onClick={handleProductRemove(product.id)}
           >
-            <img src={product.image} alt={product.name} />
+            <img src={`${process.env.PUBLIC_URL}${product.image}`} alt={product.name} />
             <div className={styles.stickyBarImageOverlay}>
               <FontAwesomeIcon icon={faTimes} className={styles.stickyBarImageIcon} />
             </div>

@@ -12,7 +12,7 @@ const SectionPromotions = () => {
         <div className='col-12 col-md-6'>
           <div className={styles.firstBox}>
             <div className={styles.imageBox}>
-              <img src={promos.firstBoxImage}></img>
+              <img src={`${process.env.PUBLIC_URL}${promos.firstBoxImage}`}></img>
               <div className={styles.imageBoxContent}>
                 <h5>{promos.firstBoxTitle}</h5>
                 <h1>{promos.firstBoxFurniture}</h1>
@@ -26,7 +26,7 @@ const SectionPromotions = () => {
         <div className='col-12 col-md-6'>
           <div className={styles.secondBox}>
             <div className={styles.secondImage}>
-              <img src={promos.secondBoxImage}></img>
+              <img src={`${process.env.PUBLIC_URL}${promos.secondBoxImage}`}></img>
               <div className={styles.secondImageContent}>
                 <h3>
                   <span>{promos.secondBoxTitle}</span> {promos.secondBoxFutniture}{' '}
@@ -40,7 +40,7 @@ const SectionPromotions = () => {
           </div>
           <div className={styles.thirdBox}>
             <div className={styles.secondImage}>
-              <img src={promos.thirdBoxImage}></img>
+              <img src={`${process.env.PUBLIC_URL}${promos.thirdBoxImage}`}></img>
               <div className={styles.thirdImageContent}>
                 <h2>
                   <span>{promos.thirdBoxTitle}</span> {promos.thirdBoxText}
