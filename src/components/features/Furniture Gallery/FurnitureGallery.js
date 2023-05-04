@@ -13,6 +13,7 @@ import {
   faShoppingBasket,
 } from '@fortawesome/free-solid-svg-icons';
 import ProductRating from '../ProductRating/ProductRating';
+import HeaderPanelBar from '../../common/HeaderPanelBar/HeaderPanelBar';
 
 class FurnitureGallery extends React.Component {
   state = {
@@ -99,9 +100,7 @@ class FurnitureGallery extends React.Component {
             <div className='left-section col-12 col-md-6'>
               <div className={styles.panelBar}>
                 <div className='row no-gutters align-items-end'>
-                  <div className={'col-12 ' + styles.heading}>
-                    <h3>Furniture Gallery</h3>
-                  </div>
+                  <HeaderPanelBar title='Furniture Gallery' />
                 </div>
               </div>
               <div className={styles.box}>
